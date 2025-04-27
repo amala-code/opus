@@ -51,7 +51,8 @@ const AboutUs = () => {
     <ContactSection/>
     <Footer/>
     </>
-    
+    // import { FaTimes } from "react-icons/fa";
+    // import { FaBars } from "react-icons/fa";
   )
 }
 
