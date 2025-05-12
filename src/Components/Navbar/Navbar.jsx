@@ -94,9 +94,16 @@ const Navbar = () => {
                     }
                   }}
               >
-                <button className="dropbtn nav-links" onClick={isMobileMenuOpen ? toggleServicesMenu : () => {}}>
+                <NavLink
+                  to="/services"
+                  className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  <button className="dropbtn nav-links" onClick={isMobileMenuOpen ? toggleServicesMenu : () => {}}>
                   Services <FaChevronDown />
                 </button>
+                </NavLink>
+                
                 <div className={`mega-menu ${isServicesOpen ? 'show' : ''}`}  ref={megaMenuRef}>
                   <div className="mega-menu-grid">
                     <div className="mega-item">

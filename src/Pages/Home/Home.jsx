@@ -8,6 +8,8 @@ import ExpertiesSection from '../../Components/ExpertiesSection/ExpertiesSection
 import ClientsSection from '../../Components/ClientsSection/ClientsSection';
 import ContactSection from '../../Components/ContactSection/ContactSection';
 import Footer from '../../Components/Footer/Footer';
+import Coaching from '../../Components/WhatweDo/Coaching'
+import QualityTabs from '../../Components/QualityTabs/QualityTabs';
 
 const Home = () => {
    
@@ -16,11 +18,14 @@ const Home = () => {
     <>
     <Navbar/>
     <HeroSection/>
+    <Coaching/>
     <ServiceSection/>
     <AboutSection/>
     <ExpertiesSection/>
+    <QualityTabs/>
     <ClientsSection/>
     <ContactSection/>
+   
     <Footer/>
     </>
   )

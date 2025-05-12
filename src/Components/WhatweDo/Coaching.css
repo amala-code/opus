@@ -1,0 +1,151 @@
+.coaching_mainContainer{
+    margin-top: 50px;
+    padding: 20px;
+    background-size: cover;
+  
+}
+.coaching_flexContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+.coaching_flexDiv1{
+    width: 30%;
+    border-radius: 30px;
+}
+.coaching_textContainer{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    /* border: 1px solid red; */
+}
+.coaching_headtext{
+    font-size: 40px;
+    font-family: var(--font1);
+    color: #2C2C2E;
+    font-weight: 600;
+}
+.coaching_subtext{
+    font-size: 18px;
+    font-family: var(--font3);
+    color: #6B6B70;
+    margin-top: 15px;
+    line-height: 30px;
+}
+
+.coaching_flexDiv2{
+    width: 80%;
+    max-width: 70%;
+    margin-left: 30px;
+    /* background: url('../../Images//clmain.png'); */
+    /* border-color: rgb(26, 151, 151); */
+    border-radius: 30px;
+}
+
+.coaching_subcard{
+    /* background-color:#da2730; */
+    /* background-color: rgba(225, 222, 222, 0.818); */
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 30px;
+    user-select: none;
+}
+
+.coachingimg{
+    width: 50px;
+    height: 50px;
+}
+.coaching_upperTextDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+}
+.coaching_upperHead{
+    font-family: var(--font1);
+    font-size: 23px;
+    font-weight: 500;
+    color: var(--color2b);
+}
+.coaching_uppersub{
+    font-family: var(--font3);
+    font-size: 15px;
+    font-weight: 400;
+    color: #2C2C2E;
+   margin-top: 10px;
+}
+.coaching_mainCard {
+    width: 300px; 
+    height: 350px;
+    /* margin: 0 10px;  */
+    /* border-radius: 20px; */
+    overflow: hidden;
+    position: relative;
+    /* box-shadow: 0 4px 20px rgba(0,0,0,0.2); */
+    color: white;
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .carousel-item-padding {
+    padding: 0 8px;
+  }
+  
+  .coaching_upperTextDiv {
+    z-index: 2;
+  }
+  
+  .coaching_upperHead {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .coaching_uppersub {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+  
+  
+  .coaching_upperTextDiv {
+    z-index: 2;
+  }
+  
+  .coaching_upperHead {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .coaching_uppersub {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+  
+@media screen and (max-width: 1000px){
+    .coaching_flexContainer{
+        flex-direction: column;
+        width: 100%;
+    }
+    .coaching_flexDiv1,.coaching_flexDiv2{
+        width: 100%;
+        max-width: 80%;
+    }
+    .coaching_mainCard{
+        height: auto;
+    }
+    .coaching_flexDiv2{
+        margin-left: 0;
+    }
+    .coaching_mainContainer{
+        margin-top: 10px;
+    }
+}
