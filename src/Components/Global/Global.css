@@ -1,0 +1,74 @@
+/* src/components/Global.css */
+
+:root {
+    --global-dark-green: #212529;
+    --global-white: #fff;
+  }
+  
+  .global-section {
+    padding: 80px 0;
+    background-image: linear-gradient(rgba(68, 74, 76, 0.5), rgba(64, 70, 67, 0.5)), url('/public/Images/wh7.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: var(--global-white);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .global-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .global-heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .global-subtext {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 40px;
+  }
+  
+  .global-stats {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 40px;
+  }
+  
+  .global-stat-item {
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+  }
+  
+  .global-stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .global-stat-label {
+    font-size: 18px;
+    opacity: 0.9;
+  }
+  
+  .global-cta-button {
+    display: inline-block;
+    background-color: #007BFF;
+    color: var(--global-white);
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  .global-cta-button:hover {
+    background-color: #4A5056;
+  }
+  
