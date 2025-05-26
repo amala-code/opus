@@ -115,7 +115,7 @@ const Feature = () => {
         </div>
 
         {/* Stats Section */}
-        <div className={`feature-what-stats ${isVisible ? 'animate-in' : ''}`}>
+        {/* <div className={`feature-what-stats ${isVisible ? 'animate-in' : ''}`}>
           <div className="stats-grid">
             <div className="stat-item">
               <div className="stat-number">2021</div>
@@ -134,7 +134,7 @@ const Feature = () => {
               <div className="stat-label">Support Available</div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

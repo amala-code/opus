@@ -145,15 +145,15 @@ const ProjectsShowcase = () => {
 
             {/* Project Meta Info */}
             <div className="project-meta">
-              <div className="meta-item">
+              <div className="meta-item-project">
                 <FaMapMarkerAlt className="meta-icon" />
                 <span>{currentProject.location}</span>
               </div>
-              <div className="meta-item">
+              <div className="meta-item-project">
                 <FaCalendarAlt className="meta-icon" />
                 <span>{currentProject.completionDate}</span>
               </div>
-              <div className="meta-item">
+              <div className="meta-item-project">
                 <FaTools className="meta-icon" />
                 <span>{currentProject.duration}</span>
               </div>
