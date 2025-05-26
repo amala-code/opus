@@ -1,151 +1,482 @@
-.coaching_mainContainer{
-    margin-top: 50px;
-    padding: 20px;
-    background-size: cover;
-  
-}
-.coaching_flexContainer{
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-top: 30px;
-}
-.coaching_flexDiv1{
-    width: 30%;
-    border-radius: 30px;
-}
-.coaching_textContainer{
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    flex-direction: column;
-    /* border: 1px solid red; */
-}
-.coaching_headtext{
-    font-size: 40px;
-    font-family: var(--font1);
-    color: #2C2C2E;
-    font-weight: 600;
-}
-.coaching_subtext{
-    font-size: 18px;
-    font-family: var(--font3);
-    color: #6B6B70;
-    margin-top: 15px;
-    line-height: 30px;
-}
-
-.coaching_flexDiv2{
-    width: 80%;
-    max-width: 70%;
-    margin-left: 30px;
-    /* background: url('../../Images//clmain.png'); */
-    /* border-color: rgb(26, 151, 151); */
-    border-radius: 30px;
-}
-
-.coaching_subcard{
-    /* background-color:#da2730; */
-    /* background-color: rgba(225, 222, 222, 0.818); */
-    margin: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-    border-radius: 30px;
-    user-select: none;
-}
-
-.coachingimg{
-    width: 50px;
-    height: 50px;
-}
-.coaching_upperTextDiv{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 15px;
-    text-align: center;
-}
-.coaching_upperHead{
-    font-family: var(--font1);
-    font-size: 23px;
-    font-weight: 500;
-    color: var(--color2b);
-}
-.coaching_uppersub{
-    font-family: var(--font3);
-    font-size: 15px;
-    font-weight: 400;
-    color: #2C2C2E;
-   margin-top: 10px;
-}
-.coaching_mainCard {
-    width: 300px; 
-    height: 350px;
-    /* margin: 0 10px;  */
-    /* border-radius: 20px; */
-    overflow: hidden;
+/* Professional Manufacturing Theme - White/Grey */
+.coaching_mainContainer {
+    margin-top: 0;
+    padding: 80px 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
     position: relative;
-    /* box-shadow: 0 4px 20px rgba(0,0,0,0.2); */
-    color: white;
+  }
+  
+  .coaching_mainContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(108, 117, 125, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(52, 58, 64, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  .coaching_flexContainer {
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 96%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .coaching_flexContainer.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .coaching_flexDiv1 {
+    width: 40%;
+    min-width: 400px;
+  }
+  
+  .coaching_textContainer {
+    position: sticky;
+    top: 100px;
+  }
+  
+  .coaching_badge {
+    display: inline-block;
+    background: linear-gradient(45deg, #495057, #343a40);
+    color: white;
+    padding: 12px 24px;
+    
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(73, 80, 87, 0.3);
+  }
+  
+  .main-title {
+    font-size: 48px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #212529;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    display: block;
+  }
+  
+  .title-underline {
+    height: 4px;
+    background: linear-gradient(90deg, #495057, #6c757d);
+    border-radius: 2px;
+    width: 80px;
+    margin-bottom: 40px;
+    animation: expandLine 1.2s ease-out 0.5s both;
+  }
+  
+  @keyframes expandLine {
+    from { width: 0; }
+    to { width: 80px; }
+  }
+  
+  .intro-text {
+    font-size: 18px;
+    color: #6c757d;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .service-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(233, 236, 239, 0.8);
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: slideInService 0.6s ease-out forwards;
+    transition: all 0.3s ease;
+  }
+  
+  .service-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    border-color: #495057;
+  }
+  
+  .service-item.delay-0 { animation-delay: 0.8s; }
+  .service-item.delay-1 { animation-delay: 1.0s; }
+  .service-item.delay-2 { animation-delay: 1.2s; }
+  .service-item.delay-3 { animation-delay: 1.4s; }
+  .service-item.delay-4 { animation-delay: 1.6s; }
+  .service-item.delay-5 { animation-delay: 1.8s; }
+  
+  @keyframes slideInService {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #495057, #343a40);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-item:hover .service-icon {
+    transform: scale(1.1);
+  }
+  
+  .service-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .service-content h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #212529;
+    margin-bottom: 6px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .service-content p {
+    font-size: 14px;
+    color: #6c757d;
+    line-height: 1.5;
+    margin: 0;
+  }
+  
+  .coaching_flexDiv2 {
+    width: 60%;
+    min-width: 600px;
+  }
+  
+  .carousel-container {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(233, 236, 239, 0.6);
+  }
+  
+  .carousel-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .carousel-header h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 12px;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .carousel-header p {
+    font-size: 16px;
+    color: #6c757d;
+    line-height: 1.5;
+  }
+  
+  .carousel-container-inner {
+    position: relative;
+    padding: 77px 0px;
   }
   
   .carousel-item-padding {
-    padding: 0 8px;
+    padding: 0 16px;
+  }
+  
+  .card-wrapper {
+    height: 480px; /* Much larger cards */
+    transition: transform 0.3s ease;
+  }
+  
+  .card-wrapper:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* Enhanced Card Styles - Larger Professional Cards */
+  .coaching_mainCard {
+    width: 106%;
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    background: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(233, 236, 239, 0.8);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+  }
+  
+  .coaching_mainCard:hover {
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+    border-color: #495057;
+  }
+  
+  .coaching_card_image {
+    width: 100%;
+    height: 240px; /* Larger image area */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+  }
+  
+  .coaching_card_image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
   }
   
   .coaching_upperTextDiv {
-    z-index: 2;
+    padding: 32px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: white;
   }
   
   .coaching_upperHead {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .coaching_uppersub {
-    font-size: 0.85rem;
+    font-size: 24px; /* Larger title */
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #212529;
+    font-family: 'Inter', sans-serif;
     line-height: 1.3;
   }
   
-  
-  .coaching_upperTextDiv {
-    z-index: 2;
-  }
-  
-  .coaching_upperHead {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
   .coaching_uppersub {
-    font-size: 0.9rem;
-    line-height: 1.3;
+    font-size: 16px; /* Larger description */
+    line-height: 1.6;
+    color: #6c757d;
+    font-family: 'Inter', sans-serif;
   }
   
-@media screen and (max-width: 1000px){
-    .coaching_flexContainer{
-        flex-direction: column;
-        width: 100%;
+  /* Custom Navigation */
+  .custom-button-group {
+    position: absolute;
+    top: 50%;
+    width: calc(100% + 120px);
+    left: -60px;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 10;
+    display: none;
+  }
+  
+  .custom-nav-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: all;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+  
+  .custom-nav-btn:hover:not(.disabled) {
+    background: #495057;
+    border-color: #495057;
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .custom-nav-btn:hover:not(.disabled) svg {
+    color: white;
+  }
+  
+  .custom-nav-btn.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  
+  .custom-nav-btn svg {
+    width: 24px;
+    height: 24px;
+    color: #495057;
+    transition: color 0.3s ease;
+  }
+  
+  /* Custom Dots */
+  .custom-dot-list {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    gap: 12px;
+  }
+  
+  .react-multi-carousel-dot button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #dee2e6;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .react-multi-carousel-dot--active button {
+    background: #495057;
+    transform: scale(1.2);
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 1200px) {
+    .coaching_flexContainer {
+      gap: 40px;
     }
-    .coaching_flexDiv1,.coaching_flexDiv2{
-        width: 100%;
-        max-width: 80%;
+    
+    .coaching_flexDiv1 {
+      min-width: 350px;
     }
-    .coaching_mainCard{
-        height: auto;
+    
+    .coaching_flexDiv2 {
+      min-width: 500px;
     }
-    .coaching_flexDiv2{
-        margin-left: 0;
+    
+    .main-title {
+      font-size: 40px;
     }
-    .coaching_mainContainer{
-        margin-top: 10px;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    .coaching_flexContainer {
+      flex-direction: column;
+      gap: 60px;
     }
-}
+    
+    .coaching_flexDiv1,
+    .coaching_flexDiv2 {
+      width: 100%;
+      min-width: auto;
+    }
+    
+    .coaching_textContainer {
+      position: static;
+    }
+    
+    .custom-button-group {
+      width: calc(100% + 80px);
+      left: -40px;
+    }
+    
+    .custom-nav-btn {
+      width: 48px;
+      height: 48px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .coaching_mainContainer {
+      padding: 60px 20px;
+    }
+    
+    .carousel-container {
+      padding: 30px 20px;
+    }
+    
+    .carousel-container-inner {
+      padding: 20px 40px;
+    }
+    
+    .card-wrapper {
+      height: 420px;
+    }
+    
+    .coaching_card_image {
+      height: 200px;
+    }
+    
+    .coaching_upperTextDiv {
+      padding: 24px;
+    }
+    
+    .coaching_upperHead {
+      font-size: 20px;
+    }
+    
+    .coaching_uppersub {
+      font-size: 14px;
+    }
+    
+    .main-title {
+      font-size: 32px;
+    }
+    
+    .service-item {
+      padding: 16px;
+    }
+    
+    .service-icon {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .service-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .carousel-container-inner {
+      padding: 20px 0;
+    }
+    
+    .custom-nav-btn {
+      display: none;
+    }
+    
+    .card-wrapper {
+      height: 380px;
+    }
+    
+    .coaching_card_image {
+      height: 180px;
+    }
+  }

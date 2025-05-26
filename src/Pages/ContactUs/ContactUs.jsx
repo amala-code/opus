@@ -2,12 +2,13 @@ import React from 'react'
 import './ContactUs.css'
 import Navbar from '../../Components/Navbar/Navbar'
 import Footer from '../../Components/Footer/Footer'
+import ContactSection from '../../Components/ContactSection/ContactSection'
 
 const ContactUs = () => {
   return (
     <>
         <Navbar/>
-        <div className="contactus-container">
+        {/* <div className="contactus-container">
       <div className="contactus-left"
       style={{ background: "url('/Images/wh3.png') center/cover no-repeat" , position: 'relative',
       overflow: 'hidden', }}
@@ -39,7 +40,8 @@ const ContactUs = () => {
           <button type="submit">SEND</button>
         </form>
       </div>
-    </div>
+    </div> */}
+    <ContactSection/>
     <Footer/>
     </>
   )

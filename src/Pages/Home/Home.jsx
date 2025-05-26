@@ -10,6 +10,11 @@ import ContactSection from '../../Components/ContactSection/ContactSection';
 import Footer from '../../Components/Footer/Footer';
 import Coaching from '../../Components/WhatweDo/Coaching'
 import QualityTabs from '../../Components/QualityTabs/QualityTabs';
+import SmallSection from '../../Components/SmallSection/SmallSection';
+import ElegantBanner from '../../Components/Elegant/Elegant';
+import BlogSection from '../../Components/Blog/Blog';
+import VideoSection from '../../Components/Video/Videos';
+import ProjectsShowcase from '../../Components/Projects/Project';
 
 const Home = () => {
    
@@ -19,11 +24,14 @@ const Home = () => {
     <Navbar/>
     <HeroSection/>
     <Coaching/>
+    <ElegantBanner/>
+    <SmallSection/>
     <ServiceSection/>
-    <AboutSection/>
-    <ExpertiesSection/>
-    <QualityTabs/>
+    <VideoSection/>
     <ClientsSection/>
+    <BlogSection/>
+    <ExpertiesSection/>
+    <ProjectsShowcase/>
     <ContactSection/>
    
     <Footer/>

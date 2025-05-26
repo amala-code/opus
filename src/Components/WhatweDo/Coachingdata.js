@@ -1,27 +1,36 @@
 export const coachingData=[
     {
         id:1,
-        tittle:"IELTS Preparation",
+        tittle:"Structural Fabrication",
         background:"/Images/wh1.png"
     },
     {
         id:2,
-        tittle:"Duolingo English Test Preparation",
+        tittle:"Machine Manufacturing",
         background:"/Images/wh6.jpeg"
     },
     {
+        id:5,
+        tittle:"Pipe Fabrication",
+        background:"/Images/pi.jpg"
+    },
+    {
         id:3,
-        tittle:"PTE Academic Coaching",
-        background:"/Images/wh3.png"
+        tittle:"Silo Stands Cable Bridges",
+        background:"/Images/silo.jpg"
     },
     {
         id:4,
-        tittle:"TOEFL Training",
-        background:"/Images/wh4.png"
+        tittle:"Tanks Fabrication",
+        background:"/Images/wh3.png"
     },
     {
-        id:5,
-        tittle:"GRE Mastery",
-        background:"/Images/wh5.png"
+        id:6,
+        tittle:"ANF Dryer",
+        background:"/Images/k.jpeg"
     },
+    
+
+   
+   
 ]

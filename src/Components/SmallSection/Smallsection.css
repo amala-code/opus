@@ -1,0 +1,80 @@
+.parallax-section {
+    width: 100%;
+    height: 70vh; /* Full viewport height */
+    background-image: url('../../Images/bg.jpg');/* Replace with your image */
+    background-color: grey;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .parallax-overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    height: 100%;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .parallax-content {
+    max-width: 1000px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .main-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+  }
+  
+  .subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #fffde7;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    line-height: 2;
+    color: #e0e0e0;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .main-title {
+      font-size: 2.5rem;
+    }
+  
+    .subtitle {
+      font-size: 1.4rem;
+    }
+  
+    .description {
+      font-size: 1rem;
+    }
+  }
+  

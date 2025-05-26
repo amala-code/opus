@@ -5,6 +5,7 @@ import Navbar from '../../Components/Navbar/Navbar';
 import Feature from '../../Components/Feature/Feature';
 import Global from '../../Components/Global/Global';
 import ContactSection from '../../Components/ContactSection/ContactSection';
+import ServicesShowcase from '../../Components/Servicesdetail/Servicedetail';
 
 const Service = () => {
   const [selectedService, setSelectedService] = useState(null);
@@ -130,57 +131,9 @@ const Service = () => {
     <>
     <Navbar/>
     
-    <div className="service-wrapper">
-      {/* Services Section */}
-      <section className="service-section">
-        <div className="service-container">
-          <div className="service-title">
-            <h2>Our Expertise</h2>
-            <p>Leveraging decades of experience, we deliver superior construction manufacturing solutions across multiple sectors.</p>
-          </div>
-          <div className="service-grid">
-            {services.map((service) => (
-              <div className="service-card" key={service.id}>
-                <div className="service-img">
-                  <img src={service.image} alt={service.title} />
-                </div>
-                <div className="service-content">
-                  <h3>{service.title}</h3>
-                  <p>{service.summary}</p>
-                  <button 
-                    onClick={() => openServiceDetails(service.id)} 
-                    className="service-link"
-                  >
-                    Learn more <span>→</span>
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Modal for service details */}
-      {selectedService && (
-        <div className="service-modal-overlay" onClick={closeServiceDetails}>
-          <div className="service-modal" onClick={(e) => e.stopPropagation()}>
-            <div className="service-modal-header">
-              <h2>{selectedService.title}</h2>
-              <button className="service-modal-close" onClick={closeServiceDetails}>×</button>
-            </div>
-            <div className="service-modal-content">
-              <div className="service-modal-img">
-                <img src={selectedService.image} alt={selectedService.title} />
-              </div>
-              <div className="service-modal-details">
-                <p>{selectedService.details}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-    <Feature/>
+    <ServicesShowcase/>
+    {/* <Feature/> */}
     <Global/>
     <ContactSection/>
     <Footer/>
