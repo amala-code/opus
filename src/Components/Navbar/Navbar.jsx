@@ -273,7 +273,7 @@ const Navbar = () => {
             <div className="navbar-modern-logo-symbol">O</div>
           </div>
           <div className="navbar-modern-logo-text">
-            <span className="navbar-modern-logo-name">Opus Technology</span>
+            <span className="navbar-modern-logo-name">Opus Engineering</span>
             <span className="navbar-modern-logo-tagline">Engineering Excellence</span>
           </div>
         </div>

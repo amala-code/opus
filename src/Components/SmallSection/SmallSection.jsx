@@ -6,7 +6,7 @@ const SmallSection = () => {
     <section className="parallax-section">
       <div className="parallax-overlay">
         <div className="parallax-content">
-          <h1 className="main-title">Our Promise</h1>
+          <h1 className="main-title-small">Our Promise</h1>
           <h2 className="subtitle">Crafting Quality & Perfection </h2>
           <p className="description">
           We believe not only in Professional Business Ethics but
