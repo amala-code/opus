@@ -178,6 +178,71 @@
     width: 15%;
     animation: expandLine 2s ease-out 2.6s both;
   }
+
+  /* Add floating animation to words */
+.elegant-word {
+  animation: float 6s ease-in-out infinite;
+}
+
+.elegant-word--1 { animation-delay: 0s; }
+.elegant-word--2 { animation-delay: 2s; }
+.elegant-word--3 { animation-delay: 4s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Sequential word animations - one after another */
+.elegant-word {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.elegant-word--1 {
+  animation: slideInUp 0.8s ease-out 0.5s both;
+}
+
+.elegant-word--2 {
+  animation: slideInUp 0.8s ease-out 1.5s both;
+}
+
+.elegant-word--3 {
+  animation: slideInUp 0.8s ease-out 2.5s both;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.elegant-banner__line {
+  animation: fadeIn 1s ease-out 3.5s both;
+}
+
+.elegant-banner__subtitle {
+  animation: fadeInUp 1s ease-out 4s both;
+}
+
+/* Update decorative lines timing */
+.decorative-line--1 {
+  animation: expandLine 2s ease-out 4.5s both;
+}
+
+.decorative-line--2 {
+  animation: expandLine 2s ease-out 4.8s both;
+}
+
+.decorative-line--3 {
+  animation: expandLine 2s ease-out 5.1s both;
+}
+
   
   @keyframes expandLine {
     from { width: 0; }

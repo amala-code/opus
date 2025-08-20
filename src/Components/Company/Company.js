@@ -305,7 +305,7 @@ for industrial and commercial projects
         </div>
 
         {/* Core Values */}
-        <div className={`journey-values-section ${isVisible ? 'journey-animate-in' : ''}`}>
+        {/* <div className={`journey-values-section ${isVisible ? 'journey-animate-in' : ''}`}>
           <div className="journey-values-header">
             <h3>Our Core Values</h3>
             <p>The principles that guide every decision and action</p>
@@ -322,10 +322,10 @@ for industrial and commercial projects
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Call to Action */}
-        <div className={`journey-cta ${isVisible ? 'journey-animate-in' : ''}`}>
+        {/* <div className={`journey-cta ${isVisible ? 'journey-animate-in' : ''}`}>
           <div className="journey-cta-content">
             <h3>Ready to Be Part of Our Journey?</h3>
             <p>Join us in shaping the future of industrial manufacturing with innovative solutions and exceptional service.</p>
@@ -340,7 +340,7 @@ for industrial and commercial projects
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
     </section>

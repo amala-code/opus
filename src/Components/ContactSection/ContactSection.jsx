@@ -1,125 +1,265 @@
+
 // import React from 'react'
 // import './ContactSection.css'
-// import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+// import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+
 // const ContactSection = () => {
 //   return (
 //     <section className="contact-section">
 //       <div className="contact-container">
-//         <div className="contact-info">
-//           <h2>Get in Touch</h2>
-//           <p>Let's discuss how we can help with your industrial needs</p>
-
-//           <div className="contact-details">
-//             <div className="contact-item">
-//               <FaPhoneAlt className="icon" />
-//               <span>+1 (555) 123–4567</span>
-//             </div>
-//             <div className="contact-item">
-//               <FaEnvelope className="icon" />
-//               <span>contact@opustech.com</span>
-//             </div>
-//             <div className="contact-item">
-//               <FaMapMarkerAlt className="icon" />
-//               <span>123 Industrial Avenue, Tech City</span>
+//         <div className="contact-header">
+//           <h2>Let's Connect</h2>
+//           <p>Ready to discuss your next project? We're here to help bring your ideas to life.</p>
+//         </div>
+        
+//         <div className="contact-content">
+//           <div className="contact-info">
+//             <div className="info-card">
+//               <h3>Contact Information</h3>
+//               <div className="contact-details">
+//                 <div className="contact-item">
+//                   <div className="icon-wrapper">
+//                     <FaPhoneAlt className="icon" />
+//                   </div>
+//                   <div className="contact-text">
+//                     <span className="label">Phone</span>
+//                     <span className="value">+91-9826430661</span>
+//                   </div>
+//                 </div>
+                
+//                 <div className="contact-item">
+//                   <div className="icon-wrapper">
+//                     <FaEnvelope className="icon" />
+//                   </div>
+//                   <div className="contact-text">
+//                     <span className="label">Email</span>
+//                     <span className="value">opus.eng.ind@gmail.com</span>
+//                   </div>
+//                 </div>
+                
+//                 <div className="contact-item">
+//                   <div className="icon-wrapper">
+//                     <FaMapMarkerAlt className="icon" />
+//                   </div>
+//                   <div className="contact-text">
+//                     <span className="label">Address</span>
+//                     <span className="value">Indore, 452001 Madhya Pradesh, India</span>
+//                   </div>
+//                 </div>
+                
+//                 <div className="contact-item">
+//                   <div className="icon-wrapper">
+//                     <FaClock className="icon" />
+//                   </div>
+//                   <div className="contact-text">
+//                     <span className="label">Business Hours</span>
+//                     <span className="value">Mon - Fri: 9:00 AM - 6:00 PM</span>
+//                   </div>
+//                 </div>
+//               </div>
 //             </div>
 //           </div>
+          
+//           <div className="contact-form-wrapper">
+//             <form className="contact-form">
+//               <div className="form-header">
+//                 <h3>Send us a Message</h3>
+//                 <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+//               </div>
+              
+//               <div className="form-row">
+//                 <input type="text" placeholder="First Name" required />
+//                 <input type="text" placeholder="Last Name" required />
+//               </div>
+              
+//               <input type="email" placeholder="Email Address" required />
+//               <input type="tel" placeholder="Phone Number" />
+              
+          
+              
+//               <textarea placeholder="Tell us about your project..." rows="4" required />
+              
+//               <button type="submit">
+//                 <span>Send Message</span>
+//               </button>
+//             </form>
+//           </div>
 //         </div>
-
-//         <form className="contact-form">
-//           <input type="text" placeholder="Your Name" required />
-//           <input type="email" placeholder="Email Address" required />
-//           <textarea placeholder="Your Message" rows="5" required />
-//           <button type="submit">Send Message</button>
-//         </form>
 //       </div>
 //     </section>
 //   )
 // }
 
 // export default ContactSection
-import React from 'react'
+
+
+import React, { useState } from 'react'
 import './ContactSection.css'
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock, FaIndustry, FaPaperPlane } from 'react-icons/fa';
+import { MdEngineering, MdLocationOn } from 'react-icons/md';
 
 const ContactSection = () => {
+  const [selectedService, setSelectedService] = useState('');
+
+  const services = [
+    'Manufacturing Machinery',
+    'Structural Steel Work',
+    'Tanks & Receivers',
+    'Pipeline Works',
+    'Panel Building',
+    'Erection Works',
+    'Custom Engineering Solutions',
+    'Maintenance & Support'
+  ];
+
   return (
     <section className="contact-section">
       <div className="contact-container">
         <div className="contact-header">
-          <h2>Let's Connect</h2>
-          <p>Ready to discuss your next project? We're here to help bring your ideas to life.</p>
+          <div className="header-badge">
+            <MdEngineering className="badge-icon" />
+            <span>Get In Touch</span>
+          </div>
+          <h2>Transform Your Vision Into Reality</h2>
         </div>
         
         <div className="contact-content">
+          {/* Contact Information & Map */}
           <div className="contact-info">
             <div className="info-card">
-              <h3>Contact Information</h3>
+              <h3>
+                <FaIndustry className="section-icon" />
+                Connect With Our Team
+              </h3>
               <div className="contact-details">
                 <div className="contact-item">
-                  <div className="icon-wrapper">
+                  <div className="icon-wrapper phone">
                     <FaPhoneAlt className="icon" />
                   </div>
                   <div className="contact-text">
-                    <span className="label">Phone</span>
+                    <span className="label">Direct Line</span>
                     <span className="value">+91-9826430661</span>
                   </div>
                 </div>
                 
                 <div className="contact-item">
-                  <div className="icon-wrapper">
+                  <div className="icon-wrapper email">
                     <FaEnvelope className="icon" />
                   </div>
                   <div className="contact-text">
-                    <span className="label">Email</span>
+                    <span className="label">Email Us</span>
                     <span className="value">opus.eng.ind@gmail.com</span>
                   </div>
                 </div>
                 
                 <div className="contact-item">
-                  <div className="icon-wrapper">
+                  <div className="icon-wrapper location">
                     <FaMapMarkerAlt className="icon" />
                   </div>
                   <div className="contact-text">
-                    <span className="label">Address</span>
-                    <span className="value">Indore, 452001 Madhya Pradesh, India</span>
+                    <span className="label">Manufacturing Hub</span>
+                    <span className="value">Indore, Madhya Pradesh, India</span>
                   </div>
                 </div>
                 
                 <div className="contact-item">
-                  <div className="icon-wrapper">
+                  <div className="icon-wrapper time">
                     <FaClock className="icon" />
                   </div>
                   <div className="contact-text">
-                    <span className="label">Business Hours</span>
-                    <span className="value">Mon - Fri: 9:00 AM - 6:00 PM</span>
+                    <span className="label">Working Hours</span>
+                    <span className="value">Monday - Saturday: 9:00 AM - 7:00 PM</span>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Map Section */}
+            <div className="map-card">
+              <h4>
+                <MdLocationOn className="map-icon" />
+                Visit Our Facility
+              </h4>
+              <div className="map-container">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d235013.74842590626!2d75.69903827312054!3d22.724110746690807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fcad1b410ddb%3A0x96ec4da356240f4!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1734722001000!5m2!1sen!2sin"
+                  width="100%"
+                  height="200"
+                  style={{ border: 0, borderRadius: '12px' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Opus Engineering Location"
+                ></iframe>
+              </div>
+            </div>
           </div>
           
+          {/* Contact Form */}
           <div className="contact-form-wrapper">
             <form className="contact-form">
               <div className="form-header">
-                <h3>Send us a Message</h3>
-                <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                <h3>Drop us a Message !</h3>
               </div>
               
               <div className="form-row">
-                <input type="text" placeholder="First Name" required />
-                <input type="text" placeholder="Last Name" required />
+                <div className="input-group">
+                  <input type="text" placeholder="First Name" required />
+                  <label>First Name *</label>
+                </div>
+                <div className="input-group">
+                  <input type="text" placeholder="Last Name" required />
+                  <label>Last Name *</label>
+                </div>
               </div>
               
-              <input type="email" placeholder="Email Address" required />
-              <input type="tel" placeholder="Phone Number" />
+              <div className="input-group">
+                <input type="email" placeholder="your.email@company.com" required />
+                <label>Business Email *</label>
+              </div>
+
+              <div className="form-row">
+                <div className="input-group">
+                  <input type="tel" placeholder="+91 98264 30661" required />
+                  <label>Phone Number *</label>
+                </div>
+                <div className="input-group">
+                  <input type="text" placeholder="Company Name" />
+                  <label>Company/Organization</label>
+                </div>
+              </div>
               
-          
+              <div className="input-group">
+                <select 
+                  value={selectedService} 
+                  onChange={(e) => setSelectedService(e.target.value)}
+                  required
+                >
+                  <option value="">Select the service you're interested in</option>
+                  {services.map((service, index) => (
+                    <option key={index} value={service}>{service}</option>
+                  ))}
+                </select>
+                <label>Service Required *</label>
+              </div>
+
+           
+              <div className="input-group">
+                <textarea 
+                  placeholder="Describe your project requirements, specifications, timeline, and any specific challenges you're facing..." 
+                  rows="5" 
+                  required 
+                />
+                <label>Project Details *</label>
+              </div>
               
-              <textarea placeholder="Tell us about your project..." rows="4" required />
-              
-              <button type="submit">
-                <span>Send Message</span>
+              <button type="submit" className="submit-btn">
+                <FaPaperPlane className="btn-icon" />
+                <span>Send Project Inquiry</span>
+                <div className="btn-shine"></div>
               </button>
+
+          
             </form>
           </div>
         </div>

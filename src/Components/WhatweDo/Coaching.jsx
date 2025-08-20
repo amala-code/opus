@@ -112,10 +112,7 @@ const Coaching = () => {
                     title: "Sustainable & Eco-Friendly Solutions", 
                     desc: "Energy-efficient materials and minimal waste production support green building initiatives and reduce carbon footprints."
                   },
-                  {
-                    title: "Advanced Fabrications", 
-                    desc: "Precision manufacturing for all industrial requirements"
-                  },
+            
                 
                 ].map((service, index) => (
                   <div key={index} className={`service-item delay-${index}`}>

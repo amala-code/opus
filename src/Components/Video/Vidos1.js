@@ -14,7 +14,7 @@ const VideoSection = () => {
         <div className="video-content">
           <h1 className="headline">Crafting the Future with Steel & Vision</h1>
           <p className="subtext">
-            For 30+ years, we've combined engineering brilliance with unwavering dedication — 
+        We've combined engineering brilliance with unwavering dedication — 
             building not just machines, but legacies.
           </p>
         </div>

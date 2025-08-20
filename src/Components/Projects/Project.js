@@ -1,60 +1,83 @@
 // ProjectsShowcase.jsx
 import React, { useState, useEffect, useRef } from "react";
 import "./project.css";
+import { useNavigate } from 'react-router-dom'
+
 import { FaArrowRight, FaCalendarAlt, FaMapMarkerAlt, FaIndustry, FaTools, FaEye, FaExternalLinkAlt } from "react-icons/fa";
 
 const projectsData = [
   {
     id: "proj-001",
-    label: "STEEL FABRICATION PROJECT",
-    heading: "Advanced Steel Manufacturing Complex",
-    description: "A state-of-the-art steel fabrication facility featuring automated production lines, precision cutting equipment, and quality control systems. This project showcases our expertise in heavy industrial construction and advanced manufacturing solutions.",
+    label: "CHIMNEY FABRICATION",
+    heading: "Amruta Herbals - Industrial Chimney System",
+    description: "Complete fabrication and erection of a 30-meter industrial chimney for Amruta Herbals. This project involved precision engineering, structural calculations, and safety compliance for pharmaceutical manufacturing operations with optimal emission control and environmental standards.",
     background: "/Images/wh1.png",
-    location: "Industrial Zone, Mumbai",
-    completionDate: "March 2024",
-    projectType: "Steel Manufacturing",
-    value: "₹45 Crores",
-    duration: "18 months",
-    features: ["Automated Production Lines", "Quality Control Systems", "Environmental Compliance", "Safety Protocols"],
-    status: "In Progress",
-    client: "Tata Steel Industries"
+    location: "Madhya Pradesh, India",
+    completionDate: "February 2024",
+    projectType: "Chimney Engineering",
+    value: "₹12 Lakhs",
+    duration: "8 weeks",
+    features: ["30m Height Structure", "Emission Control Systems", "Safety Compliance", "Weather Resistant Design"],
+    status: "Completed",
+    client: "Amruta Herbals"
   },
   {
     id: "proj-002",
-    label: "PIPELINE INFRASTRUCTURE",
-    heading: "Industrial Pipeline Network",
-    description: "Comprehensive pipeline installation project covering 25km of industrial-grade pipelines with advanced monitoring systems, safety valves, and environmental protection measures for chemical processing facilities.",
+    label: "PEB STRUCTURE",
+    heading: "Ayursatva - Pre-Engineered Building Complex",
+    description: "Design, fabrication and erection of a 50-ton Pre-Engineered Building (PEB) structure at Sanwer Road sector for Ayursatva. The project includes complete structural framework, roofing systems, and industrial-grade construction for manufacturing operations.",
     background: "/Images/wh7.jpeg",
-    location: "Vadodara, Gujarat",
-    completionDate: "January 2024",
-    projectType: "Pipeline Engineering",
-    value: "₹32 Crores",
-    duration: "14 months",
-    features: ["Advanced Monitoring", "Safety Systems", "Environmental Protection", "Leak Detection"],
-    status: "In Progress",
-    client: "Reliance Industries"
+    location: "Sanwer Road, Indore",
+    completionDate: "March 2024",
+    projectType: "PEB Construction",
+    value: "₹25 Lakhs",
+    duration: "10 weeks",
+    features: ["50 Ton Steel Structure", "Pre-Engineered Design", "Quick Assembly", "Cost-Effective Solution"],
+    status: "Completed",
+    client: "Ayursatva"
   },
   {
     id: "proj-003",
-    label: "TANK MANUFACTURING",
-    heading: "Industrial Storage Tank Complex",
-    description: "Design and construction of large-capacity industrial storage tanks with advanced corrosion protection, temperature control systems, and automated monitoring for petrochemical applications.",
+    label: "MULTI-PHASE PROJECT",
+    heading: "CMYK Laticrete - Comprehensive Industrial Solutions",
+    description: "A comprehensive multi-phase project including MS shuttle pallets, tubular pallets, 65-ton PEB fabrication, mezzanine structures, 60m³ silo cone fabrication, equipment erection, and complete denseveyor with bulker pipeline systems for advanced material handling operations.",
     background: "/Images/wh3.png",
-    location: "Jamnagar, Gujarat",
-    completionDate: "Ongoing",
-    projectType: "Tank Construction",
-    value: "₹28 Crores",
-    duration: "12 months",
-    features: ["Corrosion Protection", "Temperature Control", "Automated Monitoring", "Safety Systems"],
-    status: "In Progress",
-    client: "Indian Oil Corporation"
+    location: "Industrial Area, Indore",
+    completionDate: "April 2024",
+    projectType: "Multi-Phase Industrial",
+    value: "₹45 Lakhs",
+    duration: "16 weeks",
+    features: ["65 Ton PEB Structure", "60m³ Silo Cone", "Material Handling Systems", "Mezzanine Structures"],
+    status: "Completed",
+    client: "CMYK Laticrete"
   },
+  {
+    id: "proj-004",
+    label: "CHEMICAL PROCESSING",
+    heading: "Angeloak Specialty Chemtech - Complete Plant Setup",
+    description: "End-to-end fabrication and erection services including MS factory structures, MS & SS tanks and receivers, PEB warehouse construction, stainless steel and mild steel heat exchangers for specialized chemical processing operations with highest quality standards.",
+    background: "/Images/wh1.png",
+    location: "Chemical Hub, Gujarat",
+    completionDate: "May 2024",
+    projectType: "Chemical Plant Construction",
+    value: "₹65 Lakhs",
+    duration: "20 weeks",
+    features: ["SS Heat Exchangers", "Chemical Grade Tanks", "PEB Warehouse", "Complete Plant Setup"],
+    status: "In Progress",
+    client: "Angeloak Specialty Chemtech"
+  }
 ];
 
 const ProjectsShowcase = () => {
   const [activeTab, setActiveTab] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const containerRef = useRef(null);
+  const navigate = useNavigate()
+  
+
+  const handleButtonClick = () => {
+    navigate('/contact')
+  }
 
   const currentProject = projectsData[activeTab];
 
@@ -83,9 +106,7 @@ const ProjectsShowcase = () => {
   };
 
   const handleContactForProject = () => {
-    // Replace with your contact form or modal
     console.log("Opening contact form");
-    // Example: setShowContactModal(true);
   };
 
   return (
@@ -191,19 +212,13 @@ const ProjectsShowcase = () => {
             <div className="project-actions">
               <button 
                 className="view-project-btn"
-                onClick={() => handleViewProject(currentProject.id)}
-              >
+                onClick={() => handleButtonClick()}
+                >
                 <FaEye className="btn-icon" />
-                <span>View Project Details</span>
-                <FaExternalLinkAlt className="external-icon" />
-              </button>
-              <button 
-                className="contact-btn"
-                onClick={handleContactForProject}
-              >
                 <span>Discuss Similar Project</span>
                 <FaArrowRight className="arrow-icon" />
               </button>
+          
             </div>
           </div>
 
@@ -212,19 +227,19 @@ const ProjectsShowcase = () => {
             <div className="visual-card">
               <div className="card-header">
                 <h4>Project Overview</h4>
-                <div className="progress-ring">
+                {/* <div className="progress-ring">
                   <span>{currentProject.status === 'Completed' ? '100' : '75'}%</span>
-                </div>
+                </div> */}
               </div>
               <div className="visual-stats">
                 <div className="visual-stat">
                   <span className="stat-number-project">{currentProject.duration}</span>
                   <span className="stat-text">Duration</span>
                 </div>
-                <div className="visual-stat">
+                {/* <div className="visual-stat">
                   <span className="stat-number-project">{currentProject.value}</span>
                   <span className="stat-text">Investment</span>
-                </div>
+                </div> */}
                 <div className="visual-stat">
                   <span className="stat-number-project">{currentProject.features.length}</span>
                   <span className="stat-text">Key Features</span>

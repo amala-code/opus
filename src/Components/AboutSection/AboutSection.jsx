@@ -21,7 +21,7 @@ const AboutSection = () => {
         <div className="about-text">
           <h2>30 Years of Excellence in Industrial Solutions</h2>
           <p>
-            Since 1993, Opus Technology has been at the forefront of industrial innovation,
+            Since 1993, Opus Engineering has been at the forefront of industrial innovation,
             delivering exceptional manufacturing and infrastructure solutions. Our commitment
             to quality and precision has made us a trusted partner in the industry.
           </p>

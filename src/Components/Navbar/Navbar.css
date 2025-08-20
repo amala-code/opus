@@ -70,7 +70,7 @@ body {
   cursor: pointer;
 }
 
-.navbar-modern-logo-icon {
+/* .navbar-modern-logo-icon {
   width: 48px;
   height: 48px;
   background: linear-gradient(135deg, var(--navbar-color-grey-800), var(--navbar-color-grey-600));
@@ -79,6 +79,25 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: var(--navbar-shadow-md);
+} */
+
+.navbar-modern-logo-icon {
+  width: 48px;
+  height: 48px;
+  /* Remove or comment out the background gradient */
+  /* background: linear-gradient(135deg, var(--navbar-color-grey-800), var(--navbar-color-grey-600)); */
+  border-radius: var(--navbar-radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: var(--navbar-shadow-md); */
+}
+
+.navbar-modern-logo-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--navbar-radius-xl);
 }
 
 .navbar-modern-logo-symbol {

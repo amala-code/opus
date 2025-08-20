@@ -12,7 +12,7 @@ import Coaching from '../../Components/WhatweDo/Coaching'
 import QualityTabs from '../../Components/QualityTabs/QualityTabs';
 import SmallSection from '../../Components/SmallSection/SmallSection';
 import ElegantBanner from '../../Components/Elegant/Elegant';
-import BlogSection from '../../Components/Blog/Blog';
+import BlogSection from '../../Components/Blog/Blog_Mini';
 import VideoSection from '../../Components/Video/Videos';
 import ProjectsShowcase from '../../Components/Projects/Project';
 
@@ -24,14 +24,14 @@ const Home = () => {
     <Navbar/>
     <HeroSection/>
     <Coaching/>
-    <ElegantBanner/>
+    {/* <ElegantBanner/> */}
     <SmallSection/>
     <ServiceSection/>
-    <VideoSection/>
+    {/* <VideoSection/> */}
     <ClientsSection/>
-    <BlogSection/>
-    <ExpertiesSection/>
     <ProjectsShowcase/>
+    <BlogSection/>
+    {/* <ExpertiesSection/> */}
     <ContactSection/>
    
     <Footer/>

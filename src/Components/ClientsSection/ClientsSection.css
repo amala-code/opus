@@ -1,4 +1,4 @@
-.clients-section {
+/* .clients-section {
   padding: 100px 0;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   position: relative;
@@ -107,18 +107,15 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  /* Removed grayscale filter to keep original colors */
   filter: brightness(1) contrast(1.1) saturate(1.1);
   transition: all 0.3s ease;
 }
 
 .client-card:hover img {
-  /* Enhanced colors on hover */
   filter: brightness(1.05) contrast(1.15) saturate(1.2);
   transform: scale(1.05);
 }
 
-/* Optional: Add subtle color enhancement for better visual appeal */
 .client-card img {
   filter: brightness(1.02) contrast(1.08) saturate(1.05);
 }
@@ -128,7 +125,6 @@
   transform: scale(1.05);
 }
 
-/* ------------- RESPONSIVE STYLES ------------- */
 
 @media (max-width: 1024px) {
   .clients-grid {
@@ -193,6 +189,249 @@
   
   .client-logo-wrapper {
       height: 80px;
+  }
+}
+ */
+
+ .clients-section {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.clients-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.clients-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  position: relative;
+  z-index: 1;
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.clients-heading {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #212529;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #000000, #6c757d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.clients-subtext {
+  font-size: 1.4rem;
+  color: #636e72;
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Marquee Container */
+.clients-marquee {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/* Marquee Track */
+.clients-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll-right 30s linear infinite;
+  gap: 40px;
+}
+
+.clients-track:hover {
+  animation-play-state: paused;
+}
+
+/* Scrolling Animation */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Client Cards - Updated for horizontal layout */
+.client-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 30px 40px;
+  min-width: 200px;
+  width: 200px;
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+      0 25px 50px rgba(0, 0, 0, 0.08),
+      0 15px 35px rgba(0, 0, 0, 0.05),
+      0 8px 15px rgba(0, 0, 0, 0.03);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.client-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.client-card img {
+  max-width: 123%;
+  max-height: 330%;
+  object-fit:fill;
+  filter: brightness(1.02) contrast(1.08) saturate(1.05);
+  transition: all 0.3sease;
+
+}
+
+.client-card:hover img {
+  filter: brightness(1.08) contrast(1.12) saturate(1.15);
+  transform: scale(1.05);
+}
+
+/* ------------- RESPONSIVE STYLES ------------- */
+
+@media (max-width: 1024px) {
+  .clients-track {
+    animation-duration: 25s;
+    gap: 30px;
+  }
+  
+  .client-card {
+    min-width: 180px;
+    width: 180px;
+    padding: 25px 30px;
+  }
+  
+  .client-logo-wrapper {
+    height: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .clients-section {
+    padding: 80px 0;
+  }
+  
+  .clients-header {
+    margin-bottom: 60px;
+  }
+  
+  .clients-subtext {
+    font-size: 1rem;
+  }
+  
+  .clients-track {
+    animation-duration: 20s;
+    gap: 25px;
+  }
+  
+  .client-card {
+    min-width: 160px;
+    width: 160px;
+    padding: 20px 25px;
+    border-radius: 16px;
+  }
+  
+  .client-logo-wrapper {
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clients-section {
+    padding: 60px 0;
+  }
+  
+  .clients-track {
+    animation-duration: 18s;
+    gap: 20px;
+  }
+  
+  .client-card {
+    min-width: 140px;
+    width: 140px;
+    padding: 15px 20px;
+  }
+  
+  .client-logo-wrapper {
+    height: 50px;
+  }
+}
+
+/* Accessibility - Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .clients-track {
+    animation: none;
+  }
+  
+  .clients-marquee {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  
+  .clients-track {
+    justify-content: flex-start;
+    padding-bottom: 10px;
   }
 }
 

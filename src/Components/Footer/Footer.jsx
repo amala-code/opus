@@ -7,14 +7,14 @@ const Footer = () => {
     <footer className="footer">
     <div className="footer-container">
       <div className="footer-column">
-        <h3>Opus Technology</h3>
+        <h3>Opus Engineering</h3>
         <p>Leading the way in industrial innovation and manufacturing excellence.</p>
       </div>
 
       <div className="footer-column">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="#">About Us</a></li>
+          <li><a href="about">About Us</a></li>
           <li><a href="#">Services</a></li>
           <li><a href="#">Projects</a></li>
           <li><a href="#">Contact</a></li>
@@ -35,8 +35,7 @@ const Footer = () => {
         <h4>Connect With Us</h4>
         <div className="social-icons">
           <a href="#"><FaLinkedin /></a>
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaFacebook /></a>
+
         </div>
       </div>
     </div>
@@ -44,7 +43,7 @@ const Footer = () => {
     <hr />
 
     <div className="footer-bottom">
-      <p>© 2024 Opus Technology. All rights reserved.</p>
+      <p>© 2024 Opus Engineering. All rights reserved.</p>
     </div>
   </footer>
   )

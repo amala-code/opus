@@ -20,7 +20,7 @@
 .services-section {
   background: linear-gradient(180deg, var(--color-grey-50) 0%, var(--color-white) 100%);
   min-height: 100vh;
-  padding: 120px 0;
+  /* padding: 120px 0; */
   position: relative;
 }
 
@@ -65,7 +65,7 @@
   align-items: center;
   background: var(--color-white);
   color: var(--color-grey-700);
-  padding: 12px 24px;
+  /* padding: 12px 24px; */
   border-radius: 50px;
   font-size: 14px;
   font-weight: 600;
@@ -82,6 +82,7 @@
   font-weight: 800;
   color: var(--color-grey-900);
   line-height: 1.1;
+  margin-top: 50px;
   margin-bottom: 24px;
   letter-spacing: -0.02em;
 }
@@ -136,7 +137,7 @@
 .service-card {
   background: var(--color-white);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 32px 20px 2px 20px;
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-sm);
@@ -499,3 +500,4 @@
     --color-grey-900: #ffffff;
   }
 }
+

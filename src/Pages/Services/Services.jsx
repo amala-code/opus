@@ -134,7 +134,7 @@ const Service = () => {
 
     <ServicesShowcase/>
     {/* <Feature/> */}
-    <Global/>
+    {/* <Global/> */}
     <ContactSection/>
     <Footer/>
     </>

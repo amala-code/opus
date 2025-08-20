@@ -1,11 +1,34 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import './Feature.css';
+import { 
+  FaAward, 
+  FaGlobeAmericas,
+  FaLightbulb,
+  FaHandshake,
+  FaShieldAlt,
+  FaCog,
+  FaHeart,
+  FaEye,
+  FaIndustry,
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaCertificate,
+  FaTools,
+  FaRocket,
+  FaUsers
+} from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const Feature = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const sectionRef = useRef(null);
+  const navigate=useNavigate()
+
+  const handleButtonClick = () => {
+    navigate('/contact')
+  }
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -71,13 +94,13 @@ const Feature = () => {
               expectations. Our dedicated team of experts from engineering, commercial, and 
               financial backgrounds ensure superior quality and complete client satisfaction.
             </p>
-            <button className="feature-what-cta">
+            {/* <button className="feature-what-cta">
               <span>Discover Our Approach</span>
               <svg className="cta-arrow" viewBox="0 0 24 24" fill="none">
                 <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
               <div className="button-bg"></div>
-            </button>
+            </button> */}
           </div>
 
           {/* Features Grid */}
@@ -135,6 +158,25 @@ const Feature = () => {
             </div>
           </div>
         </div> */}
+
+
+        {/* Call to Action */}
+        <div>
+          <div className="journey-cta-content">
+            <h3>Ready to Be Part of Our Journey?</h3>
+            <p>Join us  in shaping the future of industrial manufacturing with innovative solutions and exceptional service.</p>
+            <div className="journey-cta-buttons">
+              <button className="journey-cta-primary"
+                onClick={() => handleButtonClick()}
+                >
+                <span>Start Your Project</span>
+                <FaRocket />
+              </button>
+         
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

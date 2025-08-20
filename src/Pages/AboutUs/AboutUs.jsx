@@ -17,8 +17,8 @@ const AboutUs = () => {
     <VideoSection/>
     <CompanyJourney/>
     <Feature/>
-    <ServiceSection/>
-    <ContactSection/>
+    {/* <ServiceSection/> */}
+    {/* <ContactSection/> */}
 
       
 

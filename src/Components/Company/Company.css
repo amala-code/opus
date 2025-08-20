@@ -32,7 +32,7 @@
   
   .journey-section {
     background: linear-gradient(180deg, var(--journey-color-grey-25) 0%, var(--journey-color-grey-50) 100%);
-    padding: 120px 0;
+    padding: 30px 0;
     position: relative;
     overflow: hidden;
   }
@@ -732,7 +732,7 @@
     }
     
     .journey-section {
-      padding: 80px 0;
+      padding: 20px 0;
     }
     
     .journey-story-content {
