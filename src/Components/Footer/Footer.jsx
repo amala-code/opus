@@ -6,12 +6,18 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-top">
         <div className="footer-logo-social">
-          OPUS ENGINEERING
+          <div className="logo-container">
+            <h2 className="company-logo">
+              <span className="logo-opus">OPUS</span>
+              <span className="logo-engineering">ENGINEERING</span>
+            </h2>
+            <p className="logo-tagline">Engineering Excellence in Every Structure</p>
+          </div>
         </div>
 
         <div className="footer-cta">
-          <span>Have a project in mind?</span>
-          <button>Get in Touch with Us</button>
+          <span className="cta-text">Have a project in mind?</span>
+          <a href="/contact"><button className="cta-button">Get in Touch with Us</button></a>
         </div>
       </div>
 
@@ -61,8 +67,8 @@ const Footer = () => {
         </span>
 
         <div className="footer-policy">
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Privacy Policy</a>
+    
+          <a href="/terms" target="_blank">Terms & Conditions</a>
         </div>
       </div>
     </footer>

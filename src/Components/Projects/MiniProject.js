@@ -1,363 +1,4 @@
-// // ProjectsHero.jsx — compact hero-section project showcase
-// // White & blue theme · Replace your old ProjectsShowcase with this
-// import React, { useState, useEffect, useRef } from "react";
-// import { useNavigate } from "react-router-dom";
 
-// const projectsData = [
-//   {
-//     id: "proj-001",
-//     label: "CHIMNEY",
-//     heading: "Amruta Herbals",
-//     subtitle: "Industrial Chimney System",
-//     description:
-//       "30-meter industrial chimney with precision engineering, structural calculations, and safety compliance for pharmaceutical manufacturing.",
-//     background: "/Images/wh1.png",
-//     location: "Madhya Pradesh",
-//     duration: "8 weeks",
-//     status: "Completed",
-//     highlights: ["30m Height", "Emission Control", "Safety Certified"],
-//   },
-//   {
-//     id: "proj-002",
-//     label: "PEB",
-//     heading: "Ayursatva",
-//     subtitle: "Pre-Engineered Building Complex",
-//     description:
-//       "50-ton PEB structure with complete structural framework, roofing systems, and industrial-grade construction for manufacturing.",
-//     background: "/Images/wh7.jpeg",
-//     location: "Indore",
-//     duration: "10 weeks",
-//     status: "Completed",
-//     highlights: ["50 Ton Steel", "Pre-Engineered", "Quick Assembly"],
-//   },
-//   {
-//     id: "proj-003",
-//     label: "MULTI-PHASE",
-//     heading: "CMYK Laticrete",
-//     subtitle: "Comprehensive Industrial Solutions",
-//     description:
-//       "Multi-phase project including 65-ton PEB, mezzanine structures, 60m³ silo cone fabrication, and complete pipeline systems.",
-//     background: "/Images/wh3.png",
-//     location: "Indore",
-//     duration: "16 weeks",
-//     status: "Completed",
-//     highlights: ["65T PEB", "60m³ Silo", "Material Handling"],
-//   },
-//   {
-//     id: "proj-004",
-//     label: "CHEMICAL",
-//     heading: "Angeloak Chemtech",
-//     subtitle: "Complete Plant Setup",
-//     description:
-//       "End-to-end fabrication including MS factory structures, SS tanks, PEB warehouse, and heat exchangers for chemical processing.",
-//     background: "/Images/wh1.png",
-//     location: "Gujarat",
-//     duration: "20 weeks",
-//     status: "In Progress",
-//     highlights: ["SS Exchangers", "Chemical Tanks", "Full Plant"],
-//   },
-// ];
-
-// /* ── inline styles ─────────────────────────────────────── */
-// const c = {
-//   blue: "#1a56db",
-//   blueDark: "#1040a0",
-//   blueLight: "#e8effc",
-//   bluePale: "#f4f7fe",
-//   white: "#ffffff",
-//   gray100: "#f8f9fb",
-//   gray300: "#d1d5db",
-//   gray500: "#6b7280",
-//   gray800: "#1f2937",
-// };
-
-// const ProjectsHero = () => {
-//   const [active, setActive] = useState(0);
-//   const [fade, setFade] = useState(true);
-//   const navigate = useNavigate();
-//   const intervalRef = useRef(null);
-
-//   const project = projectsData[active];
-
-//   // auto-rotate
-//   useEffect(() => {
-//     intervalRef.current = setInterval(() => {
-//       setFade(false);
-//       setTimeout(() => {
-//         setActive((p) => (p + 1) % projectsData.length);
-//         setFade(true);
-//       }, 300);
-//     }, 5000);
-//     return () => clearInterval(intervalRef.current);
-//   }, []);
-
-//   const pick = (i) => {
-//     clearInterval(intervalRef.current);
-//     setFade(false);
-//     setTimeout(() => {
-//       setActive(i);
-//       setFade(true);
-//     }, 200);
-//   };
-
-//   return (
-//     <section style={styles.section}>
-//       {/* subtle grid pattern */}
-//       <div style={styles.gridBg} />
-
-//       <div style={styles.inner}>
-//         {/* ── left: text ── */}
-//         <div style={{ ...styles.left, opacity: fade ? 1 : 0, transform: fade ? "translateY(0)" : "translateY(12px)" }}>
-//           <div style={styles.badge}>
-//             <span style={styles.badgeDot} />
-//             Our Projects
-//           </div>
-
-//           <h1 style={styles.heading}>
-//             {project.heading}
-//             <span style={styles.subtitle}>{project.subtitle}</span>
-//           </h1>
-
-//           <p style={styles.desc}>{project.description}</p>
-
-//           {/* meta row */}
-//           <div style={styles.metaRow}>
-//             <span style={styles.metaChip}>📍 {project.location}</span>
-//             <span style={styles.metaChip}>⏱ {project.duration}</span>
-//             <span style={{ ...styles.statusChip, background: project.status === "Completed" ? "#dcfce7" : "#fef3c7", color: project.status === "Completed" ? "#166534" : "#92400e" }}>
-//               {project.status}
-//             </span>
-//           </div>
-
-//           {/* highlights */}
-//           <div style={styles.highlights}>
-//             {project.highlights.map((h, i) => (
-//               <span key={i} style={styles.highlightTag}>
-//                 {h}
-//               </span>
-//             ))}
-//           </div>
-
-//           <button style={styles.cta} onClick={() => navigate("/contact")}
-//             onMouseEnter={(e) => { e.currentTarget.style.background = c.blueDark; e.currentTarget.style.transform = "translateY(-2px)"; }}
-//             onMouseLeave={(e) => { e.currentTarget.style.background = c.blue; e.currentTarget.style.transform = "translateY(0)"; }}
-//           >
-//             Discuss Your Project →
-//           </button>
-//         </div>
-
-//         {/* ── right: image card ── */}
-//         <div style={styles.right}>
-//           <div style={{ ...styles.imageCard, opacity: fade ? 1 : 0, transform: fade ? "scale(1)" : "scale(0.97)" }}>
-//             <img src={project.background} alt={project.heading} style={styles.img} />
-//             <div style={styles.imageOverlay}>
-//               <span style={styles.overlayLabel}>{project.label}</span>
-//             </div>
-//           </div>
-
-//           {/* tab dots */}
-//           <div style={styles.dots}>
-//             {projectsData.map((p, i) => (
-//               <button key={p.id} onClick={() => pick(i)}
-//                 style={{ ...styles.dot, ...(active === i ? styles.dotActive : {}) }}
-//               >
-//                 <span style={styles.dotLabel}>{p.label}</span>
-//               </button>
-//             ))}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// /* ── style objects ─────────────────────────────────────── */
-// const styles = {
-//   section: {
-//     position: "relative",
-//     width: "100%",
-//     minHeight: "520px",
-//     background: `linear-gradient(135deg, ${c.white} 0%, ${c.bluePale} 100%)`,
-//     overflow: "hidden",
-//     padding: "60px 24px 48px",
-//     boxSizing: "border-box",
-//     fontFamily: "'Outfit', 'Segoe UI', sans-serif",
-//   },
-//   gridBg: {
-//     position: "absolute",
-//     inset: 0,
-//     backgroundImage: `radial-gradient(${c.gray300}44 1px, transparent 1px)`,
-//     backgroundSize: "28px 28px",
-//     pointerEvents: "none",
-//   },
-//   inner: {
-//     position: "relative",
-//     maxWidth: "1140px",
-//     margin: "0 auto",
-//     display: "flex",
-//     gap: "48px",
-//     alignItems: "center",
-//     flexWrap: "wrap",
-//   },
-//   /* left */
-//   left: {
-//     flex: "1 1 420px",
-//     transition: "opacity .35s ease, transform .35s ease",
-//   },
-//   badge: {
-//     display: "inline-flex",
-//     alignItems: "center",
-//     gap: "8px",
-//     fontSize: "12px",
-//     fontWeight: 600,
-//     letterSpacing: "1.2px",
-//     textTransform: "uppercase",
-//     color: c.blue,
-//     marginBottom: "16px",
-//   },
-//   badgeDot: {
-//     width: 8,
-//     height: 8,
-//     borderRadius: "50%",
-//     background: c.blue,
-//     display: "inline-block",
-//   },
-//   heading: {
-//     fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
-//     fontWeight: 700,
-//     color: c.gray800,
-//     lineHeight: 1.2,
-//     margin: "0 0 12px",
-//     display: "flex",
-//     flexDirection: "column",
-//   },
-//   subtitle: {
-//     fontSize: "clamp(0.95rem, 1.8vw, 1.1rem)",
-//     fontWeight: 400,
-//     color: c.blue,
-//     marginTop: "4px",
-//   },
-//   desc: {
-//     fontSize: "0.93rem",
-//     lineHeight: 1.65,
-//     color: c.gray500,
-//     margin: "0 0 18px",
-//     maxWidth: "500px",
-//   },
-//   metaRow: {
-//     display: "flex",
-//     flexWrap: "wrap",
-//     gap: "8px",
-//     marginBottom: "16px",
-//   },
-//   metaChip: {
-//     fontSize: "0.8rem",
-//     padding: "4px 12px",
-//     borderRadius: "20px",
-//     background: c.blueLight,
-//     color: c.blueDark,
-//     fontWeight: 500,
-//   },
-//   statusChip: {
-//     fontSize: "0.8rem",
-//     padding: "4px 12px",
-//     borderRadius: "20px",
-//     fontWeight: 600,
-//   },
-//   highlights: {
-//     display: "flex",
-//     flexWrap: "wrap",
-//     gap: "6px",
-//     marginBottom: "24px",
-//   },
-//   highlightTag: {
-//     fontSize: "0.75rem",
-//     padding: "3px 10px",
-//     borderRadius: "4px",
-//     border: `1px solid ${c.blue}33`,
-//     color: c.blue,
-//     fontWeight: 500,
-//     background: c.white,
-//   },
-//   cta: {
-//     display: "inline-flex",
-//     alignItems: "center",
-//     gap: "8px",
-//     padding: "12px 28px",
-//     fontSize: "0.9rem",
-//     fontWeight: 600,
-//     color: c.white,
-//     background: c.blue,
-//     border: "none",
-//     borderRadius: "8px",
-//     cursor: "pointer",
-//     transition: "all .2s ease",
-//     boxShadow: "0 4px 14px rgba(26,86,219,.3)",
-//   },
-//   /* right */
-//   right: {
-//     flex: "1 1 360px",
-//     display: "flex",
-//     flexDirection: "column",
-//     alignItems: "center",
-//     gap: "20px",
-//   },
-//   imageCard: {
-//     position: "relative",
-//     width: "100%",
-//     maxWidth: "440px",
-//     aspectRatio: "4/3",
-//     borderRadius: "16px",
-//     overflow: "hidden",
-//     boxShadow: "0 12px 40px rgba(26,86,219,.15)",
-//     transition: "opacity .4s ease, transform .4s ease",
-//   },
-//   img: {
-//     width: "100%",
-//     height: "100%",
-//     objectFit: "cover",
-//     display: "block",
-//   },
-//   imageOverlay: {
-//     position: "absolute",
-//     bottom: 0,
-//     left: 0,
-//     right: 0,
-//     padding: "32px 16px 14px",
-//     background: "linear-gradient(transparent, rgba(0,0,0,.55))",
-//   },
-//   overlayLabel: {
-//     fontSize: "0.75rem",
-//     fontWeight: 700,
-//     letterSpacing: "1.5px",
-//     color: c.white,
-//     textTransform: "uppercase",
-//   },
-//   dots: {
-//     display: "flex",
-//     gap: "6px",
-//   },
-//   dot: {
-//     padding: "6px 14px",
-//     fontSize: "0.7rem",
-//     fontWeight: 600,
-//     letterSpacing: "0.8px",
-//     border: `1.5px solid ${c.gray300}`,
-//     borderRadius: "20px",
-//     background: c.white,
-//     color: c.gray500,
-//     cursor: "pointer",
-//     transition: "all .2s ease",
-//   },
-//   dotActive: {
-//     borderColor: c.blue,
-//     background: c.blueLight,
-//     color: c.blue,
-//   },
-//   dotLabel: {},
-// };
-
-// export default ProjectsHero;
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
@@ -574,19 +215,33 @@ const ProjectsHero = () => {
               ))}
             </div>
 
-            <button
-              className={`ph-cta ${isIn ? "ph-anim-in" : "ph-anim-out"}`}
-              style={{ animationDelay: "0.38s" }}
-              onClick={() => navigate("/contact")}
-            >
-              <span className="ph-cta-text">Discuss Your Project</span>
-              <span className="ph-cta-arrow">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </span>
-            </button>
+            <div className={`ph-cta-group ${isIn ? "ph-anim-in" : "ph-anim-out"}`} style={{ animationDelay: "0.38s" }}>
+              <button
+                className="ph-cta ph-cta-primary"
+                onClick={() => navigate("/contact")}
+              >
+                <span className="ph-cta-text">Discuss Your Project</span>
+                <span className="ph-cta-arrow">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </span>
+              </button>
+
+              <button
+                className="ph-cta ph-cta-secondary"
+                onClick={() => navigate("/projects")}
+              >
+                <span className="ph-cta-text">View All Projects</span>
+                <span className="ph-cta-arrow">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </span>
+              </button>
+            </div>
           </div>
 
           {/* RIGHT */}
@@ -783,6 +438,25 @@ const cssText = `
 .ph-cta:active { transform: translateY(0); }
 .ph-cta-arrow { display: flex; transition: transform 0.3s ease; }
 .ph-cta:hover .ph-cta-arrow { transform: translateX(4px); }
+
+/* CTA group and secondary button styles */
+.ph-cta-group { display: flex; gap: 12px; margin-top: 18px; align-items: center; }
+.ph-cta-primary { /* uses base .ph-cta styles */ }
+.ph-cta-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 26px; font-size: 0.88rem; font-weight: 700;
+  font-family: 'DM Sans', sans-serif; color: #1a56db;
+  background: #fff; border: 1.5px solid #1a56db; border-radius: 12px;
+  cursor: pointer; transition: all 0.22s ease; box-shadow: 0 6px 18px rgba(26,86,219,0.06);
+}
+.ph-cta-secondary .ph-cta-arrow svg { stroke: #1a56db; }
+.ph-cta-secondary:hover { background: #1a56db; color: #fff; box-shadow: 0 10px 30px rgba(26,86,219,0.18); }
+.ph-cta-secondary:hover .ph-cta-arrow svg { stroke: #fff; }
+
+@media (max-width: 520px) {
+  .ph-cta-group { flex-direction: column; gap: 10px; }
+  .ph-cta-secondary, .ph-cta-primary { width: 100%; justify-content: center; }
+}
 
 .ph-image-wrap {
   position: relative; width: 100%; max-width: 480px;

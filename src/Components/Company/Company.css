@@ -841,19 +841,3 @@
     }
   }
   
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --journey-color-white: #111827;
-      --journey-color-grey-25: #1f2937;
-      --journey-color-grey-50: #374151;
-      --journey-color-grey-100: #4b5563;
-      --journey-color-grey-200: #6b7280;
-      --journey-color-grey-300: #9ca3af;
-      --journey-color-grey-400: #d1d5db;
-      --journey-color-grey-500: #e5e7eb;
-      --journey-color-grey-600: #f3f4f6;
-      --journey-color-grey-700: #f9fafb;
-      --journey-color-grey-800: #fdfdfd;
-      --journey-color-grey-900: #ffffff;
-    }
-  }

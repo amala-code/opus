@@ -1,105 +1,31 @@
 
-// import React from 'react'
-// import './ContactSection.css'
-// import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 
-// const ContactSection = () => {
-//   return (
-//     <section className="contact-section">
-//       <div className="contact-container">
-//         <div className="contact-header">
-//           <h2>Let's Connect</h2>
-//           <p>Ready to discuss your next project? We're here to help bring your ideas to life.</p>
-//         </div>
-        
-//         <div className="contact-content">
-//           <div className="contact-info">
-//             <div className="info-card">
-//               <h3>Contact Information</h3>
-//               <div className="contact-details">
-//                 <div className="contact-item">
-//                   <div className="icon-wrapper">
-//                     <FaPhoneAlt className="icon" />
-//                   </div>
-//                   <div className="contact-text">
-//                     <span className="label">Phone</span>
-//                     <span className="value">+91-9826430661</span>
-//                   </div>
-//                 </div>
-                
-//                 <div className="contact-item">
-//                   <div className="icon-wrapper">
-//                     <FaEnvelope className="icon" />
-//                   </div>
-//                   <div className="contact-text">
-//                     <span className="label">Email</span>
-//                     <span className="value">opus.eng.ind@gmail.com</span>
-//                   </div>
-//                 </div>
-                
-//                 <div className="contact-item">
-//                   <div className="icon-wrapper">
-//                     <FaMapMarkerAlt className="icon" />
-//                   </div>
-//                   <div className="contact-text">
-//                     <span className="label">Address</span>
-//                     <span className="value">Indore, 452001 Madhya Pradesh, India</span>
-//                   </div>
-//                 </div>
-                
-//                 <div className="contact-item">
-//                   <div className="icon-wrapper">
-//                     <FaClock className="icon" />
-//                   </div>
-//                   <div className="contact-text">
-//                     <span className="label">Business Hours</span>
-//                     <span className="value">Mon - Fri: 9:00 AM - 6:00 PM</span>
-//                   </div>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-          
-//           <div className="contact-form-wrapper">
-//             <form className="contact-form">
-//               <div className="form-header">
-//                 <h3>Send us a Message</h3>
-//                 <p>Fill out the form below and we'll get back to you within 24 hours.</p>
-//               </div>
-              
-//               <div className="form-row">
-//                 <input type="text" placeholder="First Name" required />
-//                 <input type="text" placeholder="Last Name" required />
-//               </div>
-              
-//               <input type="email" placeholder="Email Address" required />
-//               <input type="tel" placeholder="Phone Number" />
-              
-          
-              
-//               <textarea placeholder="Tell us about your project..." rows="4" required />
-              
-//               <button type="submit">
-//                 <span>Send Message</span>
-//               </button>
-//             </form>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
-
-// export default ContactSection
-
-
-import React, { useState } from 'react'
-import './ContactSection.css'
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaClock, FaIndustry, FaPaperPlane } from 'react-icons/fa';
+import React, { useState, useRef } from 'react';
+import {
+  FaPhoneAlt,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaClock,
+  FaIndustry,
+  FaPaperPlane,
+  FaCheckCircle,
+} from 'react-icons/fa';
 import { MdEngineering, MdLocationOn } from 'react-icons/md';
+import './ContactSection.css';
 
 const ContactSection = () => {
   const [selectedService, setSelectedService] = useState('');
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: '',
+  });
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const formRef = useRef(null);
 
   const services = [
     'Manufacturing Machinery',
@@ -109,8 +35,102 @@ const ContactSection = () => {
     'Panel Building',
     'Erection Works',
     'Custom Engineering Solutions',
-    'Maintenance & Support'
+    'Maintenance & Support',
   ];
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // ──────────────────────────────────────────────
+  // OPTION 1 — mailto: (opens user's email client)
+  // Works 100% frontend-only, no third-party needed.
+  // ──────────────────────────────────────────────
+  const sendViaMailto = () => {
+    const recipient = 'opus.eng.ind@gmail.com';
+    const subject = encodeURIComponent(
+      `New Project Inquiry — ${selectedService || 'General'} | ${formData.firstName} ${formData.lastName}`
+    );
+
+    const body = encodeURIComponent(
+      `Hello Opus Engineering Team,\n\n` +
+        `You have received a new project inquiry:\n\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+        `👤  Name:          ${formData.firstName} ${formData.lastName}\n` +
+        `📧  Email:         ${formData.email}\n` +
+        `📞  Phone:         ${formData.phone}\n` +
+        `🏢  Company:       ${formData.company || 'N/A'}\n` +
+        `🔧  Service:       ${selectedService || 'N/A'}\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n\n` +
+        `📋 Project Details:\n${formData.message}\n\n` +
+        `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n` +
+        `Sent from Opus Engineering Website Contact Form`
+    );
+
+    window.open(`mailto:${recipient}?subject=${subject}&body=${body}`, '_self');
+  };
+
+  // ──────────────────────────────────────────────
+  // OPTION 2 — FormSubmit.co (free, no-backend form endpoint)
+  // Sends actual email to your inbox without any server.
+  // Replace YOUR_EMAIL below with the destination email.
+  //
+  // First submission will ask you to confirm your email.
+  // After that, all submissions go straight to your inbox.
+  // ──────────────────────────────────────────────
+  const sendViaFormSubmit = async () => {
+    setSending(true);
+
+    const payload = {
+      _subject: `New Inquiry — ${selectedService || 'General'} | ${formData.firstName} ${formData.lastName}`,
+      _template: 'table', // nicely formatted HTML table in email
+      _captcha: 'false',
+      Name: `${formData.firstName} ${formData.lastName}`,
+      Email: formData.email,
+      Phone: formData.phone,
+      Company: formData.company || 'N/A',
+      'Service Required': selectedService || 'N/A',
+      'Project Details': formData.message,
+    };
+
+    try {
+      // ⚠️  Replace the email below with your actual email address
+      const res = await fetch('https://formsubmit.co/ajax/opus.eng.ind@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      if (res.ok) {
+        setSent(true);
+        setFormData({ firstName: '', lastName: '', email: '', phone: '', company: '', message: '' });
+        setSelectedService('');
+        setTimeout(() => setSent(false), 5000);
+      } else {
+        // Fallback to mailto if FormSubmit fails
+        sendViaMailto();
+      }
+    } catch {
+      // Network error → fallback to mailto
+      sendViaMailto();
+    } finally {
+      setSending(false);
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    // 🔀  CHOOSE YOUR PREFERRED METHOD:
+    //
+    //     sendViaMailto();       ← opens mail client
+    //     sendViaFormSubmit();   ← sends silently via FormSubmit.co
+    //
+    // By default we try FormSubmit first, falling back to mailto.
+    // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    sendViaFormSubmit();
+  };
 
   return (
     <section className="contact-section">
@@ -122,9 +142,9 @@ const ContactSection = () => {
           </div>
           <h2>Transform Your Vision Into Reality</h2>
         </div>
-        
+
         <div className="contact-content">
-          {/* Contact Information & Map */}
+          {/* ─── Left Column: Info + Map ─── */}
           <div className="contact-info">
             <div className="info-card">
               <h3>
@@ -138,20 +158,24 @@ const ContactSection = () => {
                   </div>
                   <div className="contact-text">
                     <span className="label">Direct Line</span>
-                    <span className="value">+91-9826430661</span>
+                    <a href="tel:+919826430661" className="value">
+                      +91-9826430661
+                    </a>
                   </div>
                 </div>
-                
+
                 <div className="contact-item">
                   <div className="icon-wrapper email">
                     <FaEnvelope className="icon" />
                   </div>
                   <div className="contact-text">
                     <span className="label">Email Us</span>
-                    <span className="value">opus.eng.ind@gmail.com</span>
+                    <a href="mailto:opus.eng.ind@gmail.com" className="value">
+                      opus.eng.ind@gmail.com
+                    </a>
                   </div>
                 </div>
-                
+
                 <div className="contact-item">
                   <div className="icon-wrapper location">
                     <FaMapMarkerAlt className="icon" />
@@ -161,20 +185,20 @@ const ContactSection = () => {
                     <span className="value">Indore, Madhya Pradesh, India</span>
                   </div>
                 </div>
-                
+
                 <div className="contact-item">
                   <div className="icon-wrapper time">
                     <FaClock className="icon" />
                   </div>
                   <div className="contact-text">
                     <span className="label">Working Hours</span>
-                    <span className="value">Monday - Saturday: 9:00 AM - 7:00 PM</span>
+                    <span className="value">Monday – Saturday: 9:00 AM – 7:00 PM</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Map Section */}
+            {/* Map */}
             <div className="map-card">
               <h4>
                 <MdLocationOn className="map-icon" />
@@ -190,82 +214,136 @@ const ContactSection = () => {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   title="Opus Engineering Location"
-                ></iframe>
+                />
               </div>
             </div>
           </div>
-          
-          {/* Contact Form */}
+
+          {/* ─── Right Column: Form ─── */}
           <div className="contact-form-wrapper">
-            <form className="contact-form">
+            <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
               <div className="form-header">
-                <h3>Drop us a Message !</h3>
+                <h3>Drop us a Message!</h3>
               </div>
-              
+
               <div className="form-row">
                 <div className="input-group">
-                  <input type="text" placeholder="First Name" required />
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    required
+                  />
                   <label>First Name *</label>
                 </div>
                 <div className="input-group">
-                  <input type="text" placeholder="Last Name" required />
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    required
+                  />
                   <label>Last Name *</label>
                 </div>
               </div>
-              
+
               <div className="input-group">
-                <input type="email" placeholder="your.email@company.com" required />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="your.email@company.com"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
                 <label>Business Email *</label>
               </div>
 
               <div className="form-row">
                 <div className="input-group">
-                  <input type="tel" placeholder="+91 98264 30661" required />
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="+91 98264 30661"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    required
+                  />
                   <label>Phone Number *</label>
                 </div>
                 <div className="input-group">
-                  <input type="text" placeholder="Company Name" />
-                  <label>Company/Organization</label>
+                  <input
+                    type="text"
+                    name="company"
+                    placeholder="Company Name"
+                    value={formData.company}
+                    onChange={handleChange}
+                  />
+                  <label>Company / Organization</label>
                 </div>
               </div>
-              
+
               <div className="input-group">
-                <select 
-                  value={selectedService} 
+                <select
+                  value={selectedService}
                   onChange={(e) => setSelectedService(e.target.value)}
                   required
                 >
                   <option value="">Select the service you're interested in</option>
-                  {services.map((service, index) => (
-                    <option key={index} value={service}>{service}</option>
+                  {services.map((service, idx) => (
+                    <option key={idx} value={service}>
+                      {service}
+                    </option>
                   ))}
                 </select>
                 <label>Service Required *</label>
               </div>
 
-           
               <div className="input-group">
-                <textarea 
-                  placeholder="Describe your project requirements, specifications, timeline, and any specific challenges you're facing..." 
-                  rows="5" 
-                  required 
+                <textarea
+                  name="message"
+                  placeholder="Describe your project requirements, specifications, timeline, and any specific challenges you're facing..."
+                  rows="5"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                 />
                 <label>Project Details *</label>
               </div>
-              
-              <button type="submit" className="submit-btn">
-                <FaPaperPlane className="btn-icon" />
-                <span>Send Project Inquiry</span>
-                <div className="btn-shine"></div>
-              </button>
 
-          
+              <button
+                type="submit"
+                className={`submit-btn ${sending ? 'is-sending' : ''} ${sent ? 'is-sent' : ''}`}
+                disabled={sending}
+              >
+                {sent ? (
+                  <>
+                    <FaCheckCircle className="btn-icon" />
+                    <span>Message Sent Successfully!</span>
+                  </>
+                ) : sending ? (
+                  <>
+                    <span className="spinner" />
+                    <span>Sending…</span>
+                  </>
+                ) : (
+                  <>
+                    <FaPaperPlane className="btn-icon" />
+                    <span>Send Project Inquiry</span>
+                    <div className="btn-shine" />
+                  </>
+                )}
+              </button>
             </form>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ContactSection
+export default ContactSection;

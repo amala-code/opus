@@ -180,8 +180,10 @@ const OpusFAQTestimonials = () => {
             Get in touch with our team to discuss your industrial infrastructure needs.
           </p>
           <div className="cta-buttons">
-            <button className="btn-primary">Contact Us</button>
-            <button className="btn-secondary">View Projects</button>
+            <a href="/contact">
+            <button className="btn-primary">Contact Us</button></a>
+            <a href="/projects">
+            <button className="btn-secondary">View Projects</button></a>
           </div>
         </div>
       </section>

@@ -756,14 +756,26 @@ body {
     padding: 10px 12px 16px;
   }
 
-  /* Hide logo text on very small screens */
+  /* Keep logo text visible but smaller */
   .navbar-modern-logo-text {
-    display: none;
+    display: flex;
+  }
+
+  .navbar-modern-logo-name {
+    font-size: 14px;
+  }
+
+  .navbar-modern-logo-tagline {
+    font-size: 8px;
+  }
+
+  .navbar-modern-logo {
+    gap: 8px;
   }
 
   .navbar-modern-logo-icon {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
   }
 
   .navbar-modern-link,
@@ -797,23 +809,6 @@ body {
   }
 }
 
-/* Dark mode support */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --navbar-color-white: #111827;
-    --navbar-color-grey-25: #1f2937;
-    --navbar-color-grey-50: #374151;
-    --navbar-color-grey-100: #4b5563;
-    --navbar-color-grey-200: #6b7280;
-    --navbar-color-grey-300: #9ca3af;
-    --navbar-color-grey-400: #d1d5db;
-    --navbar-color-grey-500: #e5e7eb;
-    --navbar-color-grey-600: #f3f4f6;
-    --navbar-color-grey-700: #f9fafb;
-    --navbar-color-grey-800: #fdfdfd;
-    --navbar-color-grey-900: #ffffff;
-  }
-}
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {

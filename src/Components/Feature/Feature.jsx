@@ -74,6 +74,7 @@ const Feature = () => {
   ];
 
   return (
+    <>
     <section className="feature-what-section-about" ref={sectionRef}>
       <div className="feature-what-container-about">
         <div className="feature-what-wrapper-about">
@@ -141,19 +142,23 @@ const Feature = () => {
         
 
       </div>
-                <section className="cta-section">
-        <div className="cta-content">
+              
+    </section>
+      <section className="cta-section">
+    <div className="cta-content">
           <h2 className="cta-title">Ready to Start Your Project?</h2>
           <p style={{color:"white", fontSize:"18px", width:"60%", margin:"0 auto", marginBottom:"20px"}}>
             Get in touch with our team to discuss your industrial infrastructure needs.
           </p>
-          <div className="cta-buttons">
-            <button className="btn-primary">Contact Us</button>
-            <button className="btn-secondary">View Projects</button>
+          <div className="cta-buttons" >
+            <a href="/contact">
+            <button className="btn-primary">Contact Us</button></a>
+            <a href="/projects">
+            <button className="btn-secondary">View Projects</button></a>
           </div>
         </div>
       </section>
-    </section>
+      </>
   );
 };
 

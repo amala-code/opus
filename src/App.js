@@ -6,6 +6,7 @@ import Services from "./Pages/Services/Services";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import BlogSection from "./Components/Blog/BlogPage";
 import ProjectUpdated from "./Components/Projects/Project_updated";
+import TermsAndConditions from "./Pages/Terms";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
     
         <Route path="/projects" element={<ProjectUpdated />} />
         <Route path="/blogs" element={<BlogSection />} />
+        <Route path="/terms" element={<TermsAndConditions />} />
 
 
       </Routes>

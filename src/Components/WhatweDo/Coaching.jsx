@@ -375,12 +375,13 @@ const Coaching = () => {
                     </div>
 
                     <div className="why-us-button-container">
+                      <a href="/projects" >
                       <button className="why-us-button">
                         <span>Explore our projects</span>
                         <svg viewBox="0 0 24 24" fill="currentColor">
                           <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z" />
                         </svg>
-                      </button>
+                      </button></a>
                     </div>
                   </div>
                 </div>
