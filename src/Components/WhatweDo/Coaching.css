@@ -1,5 +1,4 @@
-/* Professional Manufacturing Theme - White/Grey */
-.coaching_mainContainer {
+/* .coaching_mainContainer {
     margin-top: 0;
     padding: 80px 40px;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -216,7 +215,7 @@
   }
   
   .card-wrapper {
-    height: 480px; /* Much larger cards */
+    height: 480px; 
     transition: transform 0.3s ease;
   }
   
@@ -224,7 +223,6 @@
     transform: translateY(-8px);
   }
   
-  /* Enhanced Card Styles - Larger Professional Cards */
   .coaching_mainCard {
     width: 106%;
     height: 122%;
@@ -246,7 +244,7 @@
   
   .coaching_card_image {
     width: 100%;
-    height: 240px; /* Larger image area */
+    height: 240px; 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -274,7 +272,7 @@
   }
   
   .coaching_upperHead {
-    font-size: 24px; /* Larger title */
+    font-size: 24px; 
     font-weight: 700;
     margin-bottom: 16px;
     color: #212529;
@@ -283,13 +281,13 @@
   }
   
   .coaching_uppersub {
-    font-size: 16px; /* Larger description */
+    font-size: 16px; 
     line-height: 1.6;
     color: #6c757d;
     font-family: 'Inter', sans-serif;
   }
   
-  /* Custom Navigation */
+  
   .custom-button-group {
     position: absolute;
     top: 50%;
@@ -342,7 +340,6 @@
     transition: color 0.3s ease;
   }
   
-  /* Custom Dots */
   .custom-dot-list {
     display: flex;
     justify-content: center;
@@ -365,7 +362,6 @@
     transform: scale(1.2);
   }
   
-  /* Responsive Design */
   @media screen and (max-width: 1200px) {
     .coaching_flexContainer {
       gap: 40px;
@@ -479,4 +475,1179 @@
     .coaching_card_image {
       height: 180px;
     }
+  } */
+
+  .coaching_mainContainer {
+  margin-top: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f7f7f7 0%, #ffffff 100%);
+  position: relative;
+  overflow: visible;
+}
+
+.coaching_mainContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(108, 117, 125, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, rgba(52, 58, 64, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scroll Container */
+.coaching_scrollContainer {
+  position: relative;
+  width: 100%;
+}
+
+/* Fixed Wrapper */
+.coaching_fixedWrapper {
+  position: sticky;
+  top: -7rem;
+  height: 130vh;
+  overflow: hidden;
+  padding: 80px 40px;
+}
+
+.coaching_flexContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 96%;
+  margin: 0 auto;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.coaching_scrollContainer.animate-in .coaching_flexContainer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Header */
+.section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.title-highlight {
+  color: #495057;
+  position: relative;
+}
+
+.title-underline {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #495057, #343a40);
+  border-radius: 2px;
+}
+
+/* LEFT SIDE */
+.coaching_flexDiv1 {
+  width: 45%;
+  min-width: 450px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.coaching_content_wrapper {
+  width: 100%;
+}
+
+.coaching_textContainer {
+  margin-top: 20px;
+}
+
+.coaching_badge {
+  display: inline-block;
+  background: linear-gradient(45deg, #495057, #343a40);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 15px rgba(73, 80, 87, 0.3);
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(73, 80, 87, 0.3);
   }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(73, 80, 87, 0.5);
+  }
+}
+
+.intro-text {
+  font-size: 18px;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  font-family: 'Inter', sans-serif;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.service-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 2px solid transparent;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInService 0.6s ease-out forwards;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: linear-gradient(180deg, #495057, #343a40);
+  transform: scaleY(0);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-item.active::before,
+.service-item:hover::before {
+  transform: scaleY(1);
+}
+
+.service-item.active,
+.service-item:hover {
+  transform: translateX(8px);
+  box-shadow: 0 8px 30px rgba(73, 80, 87, 0.15);
+  border-color: #495057;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.service-item.delay-0 { animation-delay: 0.2s; }
+.service-item.delay-1 { animation-delay: 0.3s; }
+.service-item.delay-2 { animation-delay: 0.4s; }
+.service-item.delay-3 { animation-delay: 0.5s; }
+.service-item.delay-4 { animation-delay: 0.6s; }
+.service-item.delay-5 { animation-delay: 0.7s; }
+
+@keyframes slideInService {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.service-icon {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #495057, #343a40);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-item.active .service-icon,
+.service-item:hover .service-icon {
+  transform: scale(1.1) rotate(360deg);
+  box-shadow: 0 8px 20px rgba(73, 80, 87, 0.4);
+}
+
+.service-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.service-content {
+  flex: 1;
+}
+
+.service-content h4 {
+  font-size: 19px;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 8px;
+  font-family: 'Inter', sans-serif;
+  transition: color 0.3s;
+}
+
+.service-item.active .service-content h4,
+.service-item:hover .service-content h4 {
+  color: #495057;
+}
+
+.service-content p {
+  font-size: 15px;
+  color: #6c757d;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.service-pulse {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #495057;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.service-item.active .service-pulse {
+  opacity: 1;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50%) scale(1.5);
+    opacity: 0.5;
+  }
+}
+
+.why-us-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  opacity: 0;
+  animation: fadeInButton 0.8s ease-out 0.8s forwards;
+}
+
+@keyframes fadeInButton {
+  to { opacity: 1; }
+}
+
+.why-us-button {
+  background: linear-gradient(135deg, #495057, #343a40);
+  color: white;
+  border: none;
+  padding: 18px 48px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(73, 80, 87, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-us-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.why-us-button:hover::before {
+  left: 100%;
+}
+
+.why-us-button:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 36px rgba(73, 80, 87, 0.4);
+}
+
+.why-us-button svg {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.why-us-button:hover svg {
+  transform: translateX(6px);
+}
+
+/* RIGHT SIDE */
+.coaching_flexDiv2 {
+  width: 55%;
+  min-width: 600px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+.capabilities-container {
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 100%;
+}
+
+.flip-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  perspective: 1000px;
+}
+
+.flip-card-wrapper {
+  opacity: 0;
+  transform: translateY(30px) scale(0.95);
+  animation: fadeInCard 0.6s ease-out forwards;
+}
+
+.flip-card-wrapper.delay-0 { animation-delay: 0.1s; }
+.flip-card-wrapper.delay-1 { animation-delay: 0.2s; }
+.flip-card-wrapper.delay-2 { animation-delay: 0.3s; }
+.flip-card-wrapper.delay-3 { animation-delay: 0.4s; }
+.flip-card-wrapper.delay-4 { animation-delay: 0.5s; }
+.flip-card-wrapper.delay-5 { animation-delay: 0.6s; }
+
+@keyframes fadeInCard {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s;
+}
+
+.flip-card-wrapper:hover .flip-card-front,
+.flip-card-wrapper:hover .flip-card-back {
+  box-shadow: 0 15px 50px rgba(73, 80, 87, 0.25);
+}
+
+.flip-card-front {
+  background: white;
+  border: 1px solid rgba(233, 236, 239, 0.8);
+}
+
+.flip-card-image {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.flip-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  transition: background 0.3s ease;
+}
+
+.flip-card:hover .flip-card-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(73, 80, 87, 0.4) 0%,
+    rgba(52, 58, 64, 0.7) 100%
+  );
+}
+
+.flip-card-front-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  color: white;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.flip-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.flip-card:hover .flip-icon-wrapper {
+  transform: scale(1.15) rotate(360deg);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.flip-icon-wrapper svg {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.flip-card-front-content h4 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-family: 'Inter', sans-serif;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.flip-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+.flip-indicator svg {
+  width: 18px;
+  height: 18px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, #495057, #343a40);
+  transform: rotateY(180deg);
+  border: 2px solid #6c757d;
+}
+
+.flip-card-back-content {
+  height: 100%;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.back-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  animation: pulse-back 2s infinite;
+}
+
+@keyframes pulse-back {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0);
+  }
+}
+
+.back-icon svg {
+  width: 35px;
+  height: 35px;
+}
+
+.flip-card-back-content h4 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-family: 'Inter', sans-serif;
+}
+
+.back-divider {
+  width: 60px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.flip-card-back-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+  opacity: 0.95;
+}
+
+.back-features {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feature-badge {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s;
+}
+
+.feature-badge:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+
+/* ================================================ */
+/* RESPONSIVE: Tablet & below — disable sticky/scroll */
+/* ================================================ */
+
+@media screen and (max-width: 1024px) {
+  .coaching_fixedWrapper {
+    position: relative;
+    top: 0;
+    height: auto;
+    overflow: visible;
+    padding: 60px 30px;
+  }
+
+  .coaching_scrollContainer {
+    height: auto !important;
+  }
+
+  .coaching_flexContainer {
+    flex-direction: column;
+    gap: 48px;
+    align-items: stretch;
+  }
+
+  .coaching_flexDiv1 {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+  }
+
+  .coaching_flexDiv2 {
+    width: 100%;
+    min-width: unset;
+    height: auto;
+  }
+
+  .capabilities-container {
+    padding: 0;
+    height: auto;
+    transform: none !important;
+  }
+
+  .flip-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .flip-card {
+    height: 310px;
+  }
+}
+
+
+/* ================================================ */
+/* RESPONSIVE: Tablets portrait                     */
+/* ================================================ */
+
+@media screen and (max-width: 768px) {
+  .coaching_fixedWrapper {
+    padding: 48px 20px;
+  }
+
+  .coaching_flexContainer {
+    gap: 36px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  .title-underline {
+    margin: 0 auto;
+    width: 80px;
+  }
+
+  .coaching_textContainer {
+    margin-top: 16px;
+  }
+
+  .service-list {
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+
+  .service-item {
+    padding: 18px 16px;
+    gap: 14px;
+    border-radius: 14px;
+  }
+
+  /* Prevent horizontal overflow on mobile */
+  .service-item.active,
+  .service-item:hover {
+    transform: translateX(0);
+    border-color: #495057;
+  }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .service-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .service-item.active .service-icon,
+  .service-item:hover .service-icon {
+    transform: scale(1.05);
+  }
+
+  .service-content h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .service-content p {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .service-pulse {
+    display: none;
+  }
+
+  .why-us-button {
+    padding: 14px 32px;
+    font-size: 15px;
+  }
+
+  /* Cards */
+  .flip-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .flip-card {
+    height: 280px;
+  }
+
+  .flip-card-front-content {
+    padding: 20px 14px;
+  }
+
+  .flip-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+  }
+
+  .flip-icon-wrapper svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .flip-card-front-content h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .flip-indicator {
+    font-size: 11px;
+    margin-top: 4px;
+  }
+
+  .flip-indicator svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .flip-card-back-content {
+    padding: 24px 18px;
+  }
+
+  .back-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 12px;
+  }
+
+  .back-icon svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .flip-card-back-content h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .back-divider {
+    width: 40px;
+    margin-bottom: 12px;
+  }
+
+  .flip-card-back-content p {
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .feature-badge {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+}
+
+
+/* ================================================ */
+/* RESPONSIVE: Mobile phones                        */
+/* ================================================ */
+
+@media screen and (max-width: 480px) {
+  .coaching_fixedWrapper {
+    padding: 36px 16px;
+  }
+
+  .coaching_flexContainer {
+    gap: 32px;
+  }
+
+  .section-title {
+    font-size: 1.65rem;
+    margin-bottom: 10px;
+  }
+
+  .title-underline {
+    width: 60px;
+    height: 3px;
+  }
+
+  .coaching_textContainer {
+    margin-top: 12px;
+  }
+
+  /* Service items */
+  .service-list {
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .service-item {
+    padding: 14px;
+    gap: 12px;
+    border-radius: 12px;
+  }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .service-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .service-content h4 {
+    font-size: 14.5px;
+    margin-bottom: 3px;
+  }
+
+  .service-content p {
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
+
+  /* Full-width button */
+  .why-us-button-container {
+    margin-top: 24px;
+  }
+
+  .why-us-button {
+    padding: 12px 24px;
+    font-size: 14px;
+    gap: 8px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .why-us-button svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Single column flip cards */
+  .flip-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .flip-card {
+    height: 260px;
+  }
+
+  .flip-card-front-content {
+    padding: 18px 14px;
+  }
+
+  .flip-icon-wrapper {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 10px;
+  }
+
+  .flip-icon-wrapper svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .flip-card-front-content h4 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .flip-indicator {
+    font-size: 11px;
+  }
+
+  .flip-card-back-content {
+    padding: 22px 16px;
+  }
+
+  .back-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 10px;
+  }
+
+  .back-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .flip-card-back-content h4 {
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+
+  .back-divider {
+    width: 36px;
+    height: 2px;
+    margin-bottom: 10px;
+  }
+
+  .flip-card-back-content p {
+    font-size: 12.5px;
+    line-height: 1.55;
+    margin-bottom: 12px;
+  }
+
+  .back-features {
+    gap: 6px;
+  }
+
+  .feature-badge {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+}
+
+
+/* ================================================ */
+/* RESPONSIVE: Very small phones                    */
+/* ================================================ */
+
+@media screen and (max-width: 360px) {
+  .coaching_fixedWrapper {
+    padding: 28px 12px;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .service-item {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .service-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .service-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .service-content h4 {
+    font-size: 13.5px;
+  }
+
+  .service-content p {
+    font-size: 11.5px;
+  }
+
+  .flip-card {
+    height: 240px;
+  }
+
+  .flip-card-front-content h4 {
+    font-size: 14.5px;
+  }
+
+  .flip-card-back-content h4 {
+    font-size: 15px;
+  }
+
+  .flip-card-back-content p {
+    font-size: 11.5px;
+  }
+
+  .why-us-button {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+
+/* ================================================ */
+/* Landscape phones                                 */
+/* ================================================ */
+
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .coaching_fixedWrapper {
+    position: relative;
+    top: 0;
+    height: auto;
+    padding: 24px 20px;
+  }
+
+  .coaching_scrollContainer {
+    height: auto !important;
+  }
+
+  .coaching_flexContainer {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .coaching_flexDiv1,
+  .coaching_flexDiv2 {
+    width: 50%;
+    min-width: unset;
+    height: auto;
+  }
+
+  .capabilities-container {
+    transform: none !important;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    text-align: left;
+  }
+
+  .title-underline {
+    margin: 0;
+  }
+
+  .service-list {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .service-item {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .service-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .service-icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .service-content h4 {
+    font-size: 12px;
+  }
+
+  .service-content p {
+    font-size: 11px;
+    line-height: 1.3;
+  }
+
+  .flip-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .flip-card {
+    height: 200px;
+  }
+
+  .why-us-button {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+
+  .why-us-button-container {
+    margin-top: 12px;
+  }
+}
+
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .coaching_badge,
+  .service-item,
+  .flip-card-wrapper,
+  .flip-icon-wrapper,
+  .flip-indicator svg,
+  .back-icon {
+    animation: none;
+  }
+
+  .service-item,
+  .flip-card-wrapper {
+    opacity: 1;
+    transform: none;
+  }
+
+  .why-us-button-container {
+    animation: none;
+    opacity: 1;
+  }
+
+  .coaching_flexContainer {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .flip-card {
+    transition: transform 0.3s ease;
+  }
+}
+
+/* High contrast */
+@media (prefers-contrast: high) {
+  .service-item {
+    border: 2px solid #212529;
+  }
+
+  .flip-card-front {
+    border: 2px solid #212529;
+  }
+
+  .flip-card-back {
+    border: 2px solid #ffffff;
+  }
+
+  .feature-badge {
+    border: 2px solid rgba(255, 255, 255, 0.6);
+  }
+}

@@ -40,63 +40,88 @@ const CompanyJourney = () => {
     return () => observer.disconnect();
   }, []);
 
-  const timelineData = [
-    {
-      year: '2021',
-      title: 'Foundation & Vision',
-      description: 'Started with a vision to revolutionize industrial manufacturing through precision engineering and innovative solutions.',
-      milestone: 'Company Founded',
-      icon: <FaRocket />,
-      achievements: ['First workshop established', 'Initial team of 5 engineers', 'First manufacturing project completed']
-    },
-    {
-      year: '2022',
-      title: 'Expansion & Growth',
-      description: 'Expanded operations with advanced machinery and established our reputation for quality structural steel work.',
-      milestone: 'Major Expansion',
-      icon: <FaIndustry />,
-      achievements: ['New 10,000 sq ft facility', 'Team expanded to 25 members', 'First major industrial contract']
-    },
-    {
-      year: '2023',
-      title: 'Technology Integration',
-      description: 'Integrated cutting-edge technology and automation systems to enhance precision and efficiency.',
-      milestone: 'Digital Transformation',
-      icon: <FaCog />,
-      achievements: ['CNC machinery installation', 'CAD/CAM implementation', 'Quality management system']
-    },
-    {
-      year: '2024',
-      title: 'Industry Recognition',
-      description: 'Achieved industry certifications and recognition for excellence in manufacturing and project delivery.',
-      milestone: 'Certification & Awards',
-      icon: <FaAward />,
-      achievements: ['ISO 9001:2015 certification', 'Best Manufacturer Award', '50+ successful projects']
-    },
-    {
-      year: '2025',
-      title: 'Innovation Leadership',
-      description: 'Became a leader in sustainable manufacturing practices and innovative engineering solutions.',
-      milestone: 'Market Leadership',
-      icon: <FaLightbulb />,
-      achievements: ['Eco-friendly processes', 'Smart manufacturing systems', '100+ team members']
-    },
-    {
-      year: '2026',
-      title: 'Future Forward',
-      description: 'Continuing to push boundaries with AI-driven manufacturing and global expansion plans.',
-      milestone: 'Global Vision',
-      icon: <FaGlobeAmericas />,
-      achievements: ['AI integration', 'International partnerships', 'Next-gen facilities']
-    }
-  ];
+const timelineData = [
+  {
+    year: '2021',
+    title: 'The Beginning',
+    description: 'The journey started with a small idea and a passionate founding team focused on building practical solutions.',
+    milestone: 'Idea Started',
+    icon: <FaLightbulb />,
+    achievements: [
+      'Initial concept planning',
+      '2–3 member founding team',
+      'Early market research'
+    ]
+  },
+  {
+    year: '2022',
+    title: 'First Steps',
+    description: 'Started working on the first product prototype and building the brand identity.',
+    milestone: 'Prototype Phase',
+    icon: <FaRocket />,
+    achievements: [
+      'First MVP developed',
+      'Basic website launched',
+      'Early user feedback collected'
+    ]
+  },
+  {
+    year: '2023',
+    title: 'Building Momentum',
+    description: 'Focused on improving the product and connecting with early users and collaborators.',
+    milestone: 'Early Growth',
+    icon: <FaUsers />,
+    achievements: [
+      'First few clients onboarded',
+      'Small team expansion',
+      'Product improvements'
+    ]
+  },
+  {
+    year: '2024',
+    title: 'Official Setup',
+    description: 'Structured operations and strengthened the company’s presence with more consistent work and partnerships.',
+    milestone: 'Operational Growth',
+    icon: <FaIndustry />,
+    achievements: [
+      'Processes streamlined',
+      'Partnership discussions started',
+      'Stronger online presence'
+    ]
+  },
+  {
+    year: '2025',
+    title: 'Scaling Slowly',
+    description: 'Focused on stability, customer satisfaction, and refining long-term vision.',
+    milestone: 'Steady Progress',
+    icon: <FaCog />,
+    achievements: [
+      'More project deliveries',
+      'Team growth to 8–10 members',
+      'Improved workflows'
+    ]
+  },
+  {
+    year: '2026',
+    title: 'Looking Ahead',
+    description: 'Preparing for bigger opportunities while staying focused on sustainable growth.',
+    milestone: 'Future Ready',
+    icon: <FaGlobeAmericas />,
+    achievements: [
+      'New collaborations planned',
+      'Product enhancements',
+      'Expansion roadmap'
+    ]
+  }
+];
 
-  const companyStats = [
-    { number: '15+', label: 'Years Experience', icon: <FaCalendarAlt /> },
-    { number: '200+', label: 'Projects Completed', icon: <FaTools /> },
-    { number: '100+', label: 'Team Members', icon: <FaUsers /> },
-    { number: '50+', label: 'Happy Clients', icon: <FaHandshake /> }
-  ];
+const companyStats = [
+  { number: '4+', label: 'Years in Operation', icon: <FaCalendarAlt /> },
+  { number: '25+', label: 'Projects Delivered', icon: <FaTools /> },
+  { number: '10+', label: 'Team Members', icon: <FaUsers /> },
+  { number: '12+', label: 'Clients', icon: <FaHandshake /> }
+];
+
 
   const coreValues = [
     {

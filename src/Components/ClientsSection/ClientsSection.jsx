@@ -79,9 +79,21 @@ const ClientsSection = () => {
 
     return (
         <section className="clients-section">
+                            <div className="testimonial-header">
+           
+                {/* </div> */}
+                        <h2 className="section-title">
+                    Trusted By 
+                    <span className="title-highlight"> Industry Leaders </span>
+                  </h2>
+
+                  <div className="title-underline"></div>
+                  </div>
             <div className="clients-container">
+               
+             
                 <div className="clients-header">
-                    <h2 className="clients-heading">Trusted By Industry Leaders</h2>
+            
                     <p className="clients-subtext">Partnering with forward-thinking organizations worldwide</p>
                 </div>
                 

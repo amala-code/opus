@@ -1,4 +1,4 @@
-/* Modern Navbar - Grey & White Theme - Fixed Hover Issue */
+/* Modern Navbar - Grey & White Theme - Custom Width & Bolder Fonts */
 :root {
   --navbar-color-white: #ffffff;
   --navbar-color-grey-25: #fdfdfd;
@@ -49,17 +49,20 @@ body {
   z-index: 100;
   width: 100%;
   transition: var(--navbar-transition);
+  /* ADDED: Shadow behind navbar */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .navbar-modern-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  position: relative;
+    max-width: fit-content;
+    margin: 0 auto;
+    padding: 0 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 95px;
+    position: relative;
+    gap: 100px;
 }
 
 /* Logo Section */
@@ -70,27 +73,13 @@ body {
   cursor: pointer;
 }
 
-/* .navbar-modern-logo-icon {
-  width: 48px;
-  height: 48px;
-  background: linear-gradient(135deg, var(--navbar-color-grey-800), var(--navbar-color-grey-600));
-  border-radius: var(--navbar-radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--navbar-shadow-md);
-} */
-
 .navbar-modern-logo-icon {
-  width: 48px;
-  height: 48px;
-  /* Remove or comment out the background gradient */
-  /* background: linear-gradient(135deg, var(--navbar-color-grey-800), var(--navbar-color-grey-600)); */
+  width: 52px;
+  height: 52px;
   border-radius: var(--navbar-radius-xl);
   display: flex;
   align-items: center;
   justify-content: center;
-  /* box-shadow: var(--navbar-shadow-md); */
 }
 
 .navbar-modern-logo-icon img {
@@ -102,8 +91,9 @@ body {
 
 .navbar-modern-logo-symbol {
   color: var(--navbar-color-white);
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 26px;
+  /* CHANGED: Increased font weight from 800 to 900 */
+  font-weight: 900;
   font-family: 'Inter', sans-serif;
 }
 
@@ -114,8 +104,10 @@ body {
 }
 
 .navbar-modern-logo-name {
-  font-size: 20px;
-  font-weight: 800;
+  /* CHANGED: Increased font size from 20px to 22px */
+  font-size: 22px;
+  /* CHANGED: Increased font weight from 800 to 900 */
+  font-weight: 900;
   color: var(--navbar-color-grey-900);
   line-height: 1;
   font-family: 'Inter', sans-serif;
@@ -123,11 +115,13 @@ body {
 }
 
 .navbar-modern-logo-tagline {
-  font-size: 11px;
-  font-weight: 500;
+  /* CHANGED: Increased font size from 11px to 12px */
+  font-size: 12px;
+  /* CHANGED: Increased font weight from 500 to 600 */
+  font-weight: 600;
   color: var(--navbar-color-grey-500);
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  /* letter-spacing: 0.05em; */
   line-height: 1;
 }
 
@@ -143,12 +137,15 @@ body {
   align-items: center;
   gap: 8px;
   background: var(--navbar-color-grey-50);
-  padding: 10px 16px;
+  /* CHANGED: Increased padding for larger size */
+  padding: 12px 18px;
   border-radius: var(--navbar-radius-lg);
   border: 1px solid var(--navbar-color-grey-200);
   color: var(--navbar-color-grey-700);
-  font-size: 14px;
-  font-weight: 600;
+  /* CHANGED: Increased font size from 14px to 15px */
+  font-size: 15px;
+  /* CHANGED: Increased font weight from 600 to 700 */
+  /* font-weight: 700; */
   transition: var(--navbar-transition);
 }
 
@@ -159,7 +156,7 @@ body {
 
 .navbar-modern-phone-icon {
   color: var(--navbar-color-grey-600);
-  font-size: 12px;
+  font-size: 13px;
 }
 
 /* Mobile Button */
@@ -200,9 +197,12 @@ body {
 .navbar-modern-link {
   text-decoration: none;
   color: var(--navbar-color-grey-700);
-  padding: 12px 16px;
-  font-weight: 500;
-  font-size: 15px;
+  /* CHANGED: Increased padding for larger size */
+  padding: 14px 18px;
+  /* CHANGED: Increased font weight from 500 to 600 */
+  font-weight: 600;
+  /* CHANGED: Increased font size from 15px to 16px */
+  font-size: 16px;
   border-radius: var(--navbar-radius-lg);
   transition: var(--navbar-transition);
   position: relative;
@@ -219,7 +219,8 @@ body {
 .navbar-modern-link.navbar-modern-active {
   color: var(--navbar-color-grey-900);
   background: var(--navbar-color-grey-100);
-  font-weight: 600;
+  /* CHANGED: Increased font weight from 600 to 700 */
+  font-weight: 700;
 }
 
 /* Dropdown Container - FIXED HOVER ISSUE */
@@ -246,9 +247,12 @@ body {
   background: none;
   border: none;
   color: var(--navbar-color-grey-700);
-  padding: 12px 16px;
-  font-weight: 500;
-  font-size: 15px;
+  /* CHANGED: Increased padding for larger size */
+  padding: 14px 18px;
+  /* CHANGED: Increased font weight from 500 to 600 */
+  font-weight: 600;
+  /* CHANGED: Increased font size from 15px to 16px */
+  font-size: 16px;
   border-radius: var(--navbar-radius-lg);
   cursor: pointer;
   transition: var(--navbar-transition);
@@ -295,9 +299,12 @@ body {
   background: none;
   border: none;
   color: var(--navbar-color-grey-700);
-  padding: 10px 12px;
-  font-weight: 500;
-  font-size: 14px;
+  /* CHANGED: Increased padding for larger size */
+  padding: 12px 14px;
+  /* CHANGED: Increased font weight from 500 to 600 */
+  font-weight: 600;
+  /* CHANGED: Increased font size from 14px to 15px */
+  font-size: 15px;
   border-radius: var(--navbar-radius-lg);
   cursor: pointer;
   transition: var(--navbar-transition);
@@ -309,7 +316,7 @@ body {
 }
 
 .navbar-modern-flag {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1;
 }
 
@@ -340,8 +347,11 @@ body {
   border-radius: var(--navbar-radius-md);
   cursor: pointer;
   transition: var(--navbar-transition);
-  font-size: 14px;
+  /* CHANGED: Increased font size from 14px to 15px */
+  font-size: 15px;
   color: var(--navbar-color-grey-700);
+  /* CHANGED: Increased font weight to 600 */
+  font-weight: 600;
 }
 
 .navbar-modern-language-item:hover {
@@ -352,7 +362,8 @@ body {
 .navbar-modern-language-item.navbar-modern-language-active {
   background: var(--navbar-color-grey-100);
   color: var(--navbar-color-grey-900);
-  font-weight: 600;
+  /* CHANGED: Increased font weight from 600 to 700 */
+  font-weight: 700;
 }
 
 /* Mega Menu - FIXED HOVER ISSUE */
@@ -396,17 +407,22 @@ body {
 
 .navbar-modern-mega-header h3 {
   margin: 0 0 6px 0;
-  font-size: 20px;
-  font-weight: 700;
+  /* CHANGED: Increased font size from 20px to 21px */
+  font-size: 21px;
+  /* CHANGED: Increased font weight from 700 to 800 */
+  font-weight: 800;
   color: var(--navbar-color-grey-900);
   font-family: 'Inter', sans-serif;
 }
 
 .navbar-modern-mega-header p {
   margin: 0;
-  font-size: 14px;
+  /* CHANGED: Increased font size from 14px to 15px */
+  font-size: 15px;
   color: var(--navbar-color-grey-600);
   line-height: 1.5;
+  /* CHANGED: Added font weight */
+  font-weight: 500;
 }
 
 .navbar-modern-mega-grid {
@@ -432,8 +448,10 @@ body {
 }
 
 .navbar-modern-mega-category {
-  font-size: 11px;
-  font-weight: 600;
+  /* CHANGED: Increased font size from 11px to 12px */
+  font-size: 12px;
+  /* CHANGED: Increased font weight from 600 to 700 */
+  font-weight: 700;
   color: var(--navbar-color-grey-500);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -442,8 +460,10 @@ body {
 
 .navbar-modern-mega-item h4 {
   margin: 0;
-  font-size: 16px;
-  font-weight: 600;
+  /* CHANGED: Increased font size from 16px to 17px */
+  font-size: 17px;
+  /* CHANGED: Increased font weight from 600 to 700 */
+  font-weight: 700;
   color: var(--navbar-color-grey-900);
   font-family: 'Inter', sans-serif;
   transition: var(--navbar-transition);
@@ -451,10 +471,13 @@ body {
 
 .navbar-modern-mega-item p {
   margin: 0;
-  font-size: 13px;
+  /* CHANGED: Increased font size from 13px to 14px */
+  font-size: 14px;
   color: var(--navbar-color-grey-600);
   line-height: 1.5;
   flex-grow: 1;
+  /* CHANGED: Added font weight */
+  font-weight: 500;
 }
 
 .navbar-modern-mega-arrow {
@@ -486,8 +509,10 @@ body {
   gap: 8px;
   text-decoration: none;
   color: var(--navbar-color-grey-700);
-  font-size: 14px;
-  font-weight: 600;
+  /* CHANGED: Increased font size from 14px to 15px */
+  font-size: 15px;
+  /* CHANGED: Increased font weight from 600 to 700 */
+  font-weight: 700;
   padding: 10px 16px;
   border-radius: var(--navbar-radius-lg);
   transition: var(--navbar-transition);
@@ -532,7 +557,7 @@ body {
 @media (max-width: 768px) {
   .navbar-modern-container {
     padding: 0 20px;
-    height: 70px;
+    height: 75px;
   }
   
   .navbar-modern-logo-text {
@@ -540,21 +565,21 @@ body {
   }
   
   .navbar-modern-logo-icon {
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
   }
   
   .navbar-modern-logo-symbol {
-    font-size: 20px;
+    font-size: 22px;
   }
   
   .navbar-modern-links-container {
     display: none;
     position: fixed;
-    top: 70px;
+    top: 75px;
     left: 0;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 75px);
     background: var(--navbar-color-white);
     flex-direction: column;
     padding: 24px;
@@ -582,7 +607,8 @@ body {
     width: 100%;
     justify-content: center;
     padding: 16px;
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 600;
   }
   
   .navbar-modern-language {
@@ -596,7 +622,7 @@ body {
     width: 100%;
     justify-content: center;
     padding: 16px;
-    font-size: 16px;
+    font-size: 17px;
   }
   
   .navbar-modern-mega-menu,
@@ -642,8 +668,8 @@ body {
     border-radius: var(--navbar-radius-xl);
     border: 1px solid var(--navbar-color-grey-200);
     color: var(--navbar-color-grey-700);
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
   }
 }
 

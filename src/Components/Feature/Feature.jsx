@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from 'react';
 import './Feature.css';
 import { 
@@ -24,11 +23,11 @@ const Feature = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const sectionRef = useRef(null);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/contact')
-  }
+    navigate('/contact');
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -75,109 +74,85 @@ const Feature = () => {
   ];
 
   return (
-    <section className="feature-what-section" ref={sectionRef}>
-      <div className="feature-what-container">
-        <div className="feature-what-wrapper">
+    <section className="feature-what-section-about" ref={sectionRef}>
+      <div className="feature-what-container-about">
+        <div className="feature-what-wrapper-about">
+
           {/* Content Section */}
-          <div className={`feature-what-content ${isVisible ? 'animate-in' : ''}`}>
-            <div className="content-badge">
+          <div className={`feature-what-content-about ${isVisible ? 'animate-in-about' : ''}`}>
+            <div className="content-badge-about">
               <span>Our Expertise</span>
             </div>
-            <h2 className="feature-what-title">
+
+            <h2 className="feature-what-title-about">
               What Sets Us 
-              <span className="title-accent"> Apart</span>
+              <span className="title-accent-about"> Apart</span>
             </h2>
-            <div className="title-decoration"></div>
-            <p className="feature-what-description">
+
+            <div className="title-decoration-about"></div>
+
+            <p className="feature-what-description-about">
               At Opus Engineering, established in 2021, we combine technical expertise with 
               innovative thinking to deliver Pre-Engineered Building solutions that exceed 
               expectations. Our dedicated team of experts from engineering, commercial, and 
               financial backgrounds ensure superior quality and complete client satisfaction.
             </p>
-            {/* <button className="feature-what-cta">
-              <span>Discover Our Approach</span>
-              <svg className="cta-arrow" viewBox="0 0 24 24" fill="none">
-                <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <div className="button-bg"></div>
-            </button> */}
           </div>
 
           {/* Features Grid */}
-          <div className={`features-grid ${isVisible ? 'animate-in' : ''}`}>
+          <div className={`features-grid-about ${isVisible ? 'animate-in-about' : ''}`}>
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`feature-what-item ${hoveredItem === index ? 'hovered' : ''}`}
+                className={`feature-what-item-about ${hoveredItem === index ? 'hovered-about' : ''}`}
                 onMouseEnter={() => setHoveredItem(index)}
                 onMouseLeave={() => setHoveredItem(null)}
                 style={{ animationDelay: `${index * 0.1 + 0.3}s` }}
               >
-                <div className="feature-what-header">
-                  <div className="feature-what-metric">
+                <div className="feature-what-header-about">
+                  <div className="feature-what-metric-about">
                     {feature.metric}
                   </div>
                 </div>
-                
-                <div className="feature-what-icon-wrapper">
-                  <div className="feature-what-icon">
+
+                <div className="feature-what-icon-wrapper-about">
+                  <div className="feature-what-icon-about">
                     {feature.icon}
                   </div>
-                  <div className="icon-glow"></div>
+                  <div className="icon-glow-about"></div>
                 </div>
-                
-                <div className="feature-what-text">
-                  <h3 className="feature-what-name">{feature.title}</h3>
-                  <p className="feature-what-desc">{feature.description}</p>
+
+                <div className="feature-what-text-about">
+                  <h3 className="feature-what-name-about">{feature.title}</h3>
+                  <p className="feature-what-desc-about">{feature.description}</p>
                 </div>
-                
-                <div className="feature-what-overlay"></div>
+
+                <div className="feature-what-overlay-about"></div>
               </div>
             ))}
           </div>
+
         </div>
 
-        {/* Stats Section */}
-        {/* <div className={`feature-what-stats ${isVisible ? 'animate-in' : ''}`}>
-          <div className="stats-grid">
-            <div className="stat-item">
-              <div className="stat-number">2021</div>
-              <div className="stat-label">Established</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">100+</div>
-              <div className="stat-label">Projects Delivered</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">50+</div>
-              <div className="stat-label">Happy Clients</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number">24/7</div>
-              <div className="stat-label">Support Available</div>
-            </div>
-          </div>
-        </div> */}
-
-
-        {/* Call to Action */}
         <div>
-          <div className="journey-cta-content">
-            <h3>Ready to Be Part of Our Journey?</h3>
-            <p>Join us  in shaping the future of industrial manufacturing with innovative solutions and exceptional service.</p>
-            <div className="journey-cta-buttons">
-              <button className="journey-cta-primary"
-                onClick={() => handleButtonClick()}
-                >
-                <span>Start Your Project</span>
-                <FaRocket />
-              </button>
-         
-            </div>
-          </div>
+   
+     
         </div>
+        
 
       </div>
+                <section className="cta-section">
+        <div className="cta-content">
+          <h2 className="cta-title">Ready to Start Your Project?</h2>
+          <p style={{color:"white", fontSize:"18px", width:"60%", margin:"0 auto", marginBottom:"20px"}}>
+            Get in touch with our team to discuss your industrial infrastructure needs.
+          </p>
+          <div className="cta-buttons">
+            <button className="btn-primary">Contact Us</button>
+            <button className="btn-secondary">View Projects</button>
+          </div>
+        </div>
+      </section>
     </section>
   );
 };

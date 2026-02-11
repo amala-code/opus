@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './HeroSection.css'
-import img1 from '../../Images/a.jpeg'
-import img2 from '../../Images/b.jpeg'
-import img3 from '../../Images/c.jpeg'
+// import img1 from '/Images/11.jpg'
+// import img2 from '/Images/12.jpg'
+// import img3 from '/Images/14.jpg'
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -11,21 +11,21 @@ const HeroSection = () => {
 
   const slides = [
     {
-      image: img1,
+      image: '/Images/111.png',
       title: 'Designing and delivering robust Pipelines, Chimneys, and Structural Solutions for diverse sectors',
       subtitle: 'Pioneering Industrial Solutions in Manufacturing and Infrastructure',
       buttonText: 'Explore Our Services',
       route: '/services'
     },
     {
-      image: img2, 
+      image: '/Images/112.png', 
       title: 'Precision Engineering Excellence in Every Project',
       subtitle: 'Leading the Way in Advanced Manufacturing Technologies',
       buttonText: 'Know more about us',
       route: '/about'
     },
     {
-      image: img3, 
+      image: '/Images/113.png', 
       title: 'Trusted partners in Infrastructure with Sustainable PB Structures and Advanced Fabrication',
       subtitle: 'Sustainable Solutions for Modern Industrial Challenges',
       buttonText: 'Contact Us',

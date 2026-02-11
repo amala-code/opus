@@ -99,80 +99,77 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar-modern">
-      <div className="navbar-modern-container">
-        {/* Logo Section */}
-        <div className="navbar-modern-logo">
-          <div className="navbar-modern-logo-icon">
-            {/* <div className="navbar-modern-logo-symbol"></div> */}
-            <img src={logo} alt="Opus Engineering Logo" />          </div>
-          <div className="navbar-modern-logo-text">
-            <span className="navbar-modern-logo-name">Opus Engineering</span>
-            <span className="navbar-modern-logo-tagline">Engineering Excellence</span>
+      <nav className="navbar-modern">
+        <div className="navbar-modern-container">
+          {/* Logo Section */}
+          <div className="navbar-modern-logo">
+            <div className="navbar-modern-logo-icon">
+              {/* <div className="navbar-modern-logo-symbol"></div> */}
+              <img src={logo} alt="Opus Engineering Logo" />
+            </div>
+            <div className="navbar-modern-logo-text">
+              <span className="navbar-modern-logo-name">Opus Engineering</span>
+              <span className="navbar-modern-logo-tagline">Engineering Excellence</span>
+            </div>
           </div>
-        </div>
 
-        {/* Contact Info */}
-        <div className="navbar-modern-contact">
-          <div className="navbar-modern-phone">
-            <FaPhone className="navbar-modern-phone-icon" />
-            <span>+91-9826430661</span>
+          {/* Contact Info & Download Brochure Button */}
+          <div className="navbar-modern-contact">
+            <div className="navbar-modern-phone">
+              <FaPhone className="navbar-modern-phone-icon" />
+              <span>+91-9826430661</span>
+            </div>
+ 
           </div>
-        </div>
 
-        {/* Hamburger Button for Mobile */}
-        <div className="navbar-modern-mobile-button" onClick={toggleMobileMenu}>
-          {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </div>
+          {/* Hamburger Button for Mobile */}
+          <div className="navbar-modern-mobile-button" onClick={toggleMobileMenu}>
+            {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </div>
 
-        <div
-          className={`navbar-modern-links-container ${isMobileMenuOpen ? 'navbar-modern-show-mobile' : ''}`}
-          ref={navLinksRef}
-        >
-          <ul className="navbar-modern-links">
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) => isActive ? "navbar-modern-link navbar-modern-active" : "navbar-modern-link"}
-                end
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Home
-              </NavLink>
-            </li>
-            
-            <li>
-              <NavLink
-                to="/about"
-                className={({ isActive }) => isActive ? "navbar-modern-link navbar-modern-active" : "navbar-modern-link"}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About
-              </NavLink>
-            </li>
-
-
-
-            <li>
-              <NavLink
-                to="/projects"
-                className={({ isActive }) => isActive ? "navbar-modern-link navbar-modern-active" : "navbar-modern-link"}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Projects
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/services"
-                className={({ isActive }) => isActive ? "navbar-modern-link navbar-modern-active" : "navbar-modern-link"}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Services
-              </NavLink>
-            </li>
-
+          <div
+            className={`navbar-modern-links-container ${isMobileMenuOpen ? 'navbar-modern-show-mobile' : ''}`}
+            ref={navLinksRef}
+          >
+            <ul className="navbar-modern-links">
+              <li>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) => isActive ? "navbar-modern-link navbar-modern-active" : "navbar-modern-link"}
+                  end
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) => isActive ? "navbar-modern-link navbar-modern-active" : "navbar-modern-link"}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  About
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/projects"
+                  className={({ isActive }) => isActive ? "navbar-modern-link navbar-modern-active" : "navbar-modern-link"}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Projects
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/services"
+                  className={({ isActive }) => isActive ? "navbar-modern-link navbar-modern-active" : "navbar-modern-link"}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Services
+                </NavLink>
+              </li>
+              {/* ...existing code for dropdowns and other links... */}
             {/* Projects Dropdown */}
             {/* <li
               className="navbar-modern-dropdown"
@@ -377,6 +374,14 @@ const Navbar = () => {
             </div>
           </div>
         </div>
+                   {/* <a
+              href="/opus.pdf"
+              download
+              className="navbar-modern-download-btn"
+              style={{ marginLeft: '16px', padding: '8px 16px', background: '#2e3338ff', color: '#fff', borderRadius: '4px', textDecoration: 'none', fontWeight: 'bold', display: 'inline-block' }}
+            >
+              Download Brochure
+            </a> */}
       </div>
     </nav>
   );

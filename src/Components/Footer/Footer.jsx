@@ -1,52 +1,72 @@
-import React from 'react'
-import './Footer.css'
-import { FaLinkedin, FaTwitter, FaFacebook } from 'react-icons/fa';
+import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
-    <div className="footer-container">
-      <div className="footer-column">
-        <h3>Opus Engineering</h3>
-        <p>Leading the way in industrial innovation and manufacturing excellence.</p>
-      </div>
+      <div className="footer-top">
+        <div className="footer-logo-social">
+          OPUS ENGINEERING
+        </div>
 
-      <div className="footer-column">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="about">About Us</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-
-      <div className="footer-column">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#">Manufacturing</a></li>
-          <li><a href="#">Steel Work</a></li>
-          <li><a href="#">Pipeline Works</a></li>
-          <li><a href="#">Tank Fabrication</a></li>
-        </ul>
-      </div>
-
-      <div className="footer-column">
-        <h4>Connect With Us</h4>
-        <div className="social-icons">
-          <a href="#"><FaLinkedin /></a>
-
+        <div className="footer-cta">
+          <span>Have a project in mind?</span>
+          <button>Get in Touch with Us</button>
         </div>
       </div>
-    </div>
 
-    <hr />
+      <div className="footer-links">
+        <div>
+          <h4>About Us</h4>
+          <p>Who We Are</p>
+          <p>Our Mission, Vision & Values</p>
+          <p>Health, Safety & Environment</p>
+          <p>Leadership Team</p>
+          <p>Awards & Recognition</p>
+        </div>
 
-    <div className="footer-bottom">
-      <p>© 2024 Opus Engineering. All rights reserved.</p>
-    </div>
-  </footer>
-  )
-}
+        <div>
+          <h4>Products & Services</h4>
+          <p>Pre-Engineered Steel Buildings (PEB)</p>
+          <p>Structural Steel Solutions</p>
+          <p>Why Choose OPUS</p>
+          <p>Storage & Warehousing Solutions</p>
+          <p>Accessories & Components</p>
+        </div>
 
-export default Footer
+        <div>
+          <h4>Projects</h4>
+          <p>Client Testimonials</p>
+          <p>Our Portfolio</p>
+          <p>Design & Build Solutions</p>
+        </div>
+
+        <div>
+          <h4>Careers</h4>
+          <p>Life at OPUS</p>
+          <p>Current Openings</p>
+        </div>
+
+        <div>
+          <h4>Contact Us</h4>
+          <p>Sales Network</p>
+          <p>Manufacturing Facilities</p>
+          <p>Request a Quote</p>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <span>
+          © {new Date().getFullYear()} Opus Engineering — Engineering Excellence in Every Structure
+        </span>
+
+        <div className="footer-policy">
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

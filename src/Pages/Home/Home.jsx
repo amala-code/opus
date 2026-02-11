@@ -15,6 +15,9 @@ import ElegantBanner from '../../Components/Elegant/Elegant';
 import BlogSection from '../../Components/Blog/Blog_Mini';
 import VideoSection from '../../Components/Video/Videos';
 import ProjectsShowcase from '../../Components/Projects/Project';
+import PebCtaBanner from '../../Components/Download';
+import OpusFAQTestimonials from '../FAQ';
+import ProjectsHero from '../../Components/Projects/MiniProject';
 
 const Home = () => {
    
@@ -25,14 +28,18 @@ const Home = () => {
     <HeroSection/>
     <Coaching/>
     {/* <ElegantBanner/> */}
-    <SmallSection/>
-    <ServiceSection/>
+    {/* <SmallSection/> */}
+    {/* <ServiceSection/> */}
     {/* <VideoSection/> */}
     <ClientsSection/>
-    <ProjectsShowcase/>
-    <BlogSection/>
+    {/* <ProjectsShowcase/> */}
+    <ProjectsHero/>
     {/* <ExpertiesSection/> */}
-    <ContactSection/>
+    {/* <ContactSection/> */}
+    <OpusFAQTestimonials/>
+    {/* <BlogSection/> */}
+    <PebCtaBanner/>
+    
    
     <Footer/>
     </>

@@ -141,6 +141,11 @@
   z-index: 3;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-arrow:hover {
@@ -205,12 +210,15 @@
   transition: width 0.3s ease;
 }
 
-/* Responsive Design */
+/* ===================== */
+/* RESPONSIVE DESIGN     */
+/* ===================== */
+
 @media (max-width: 1200px) {
   .hero-slide {
     padding-left: 8%;
   }
-  
+
   .hero-content {
     max-width: 600px;
   }
@@ -220,93 +228,246 @@
   .hero-carousel {
     height: 90vh;
   }
-  
+
   .hero-slide {
     padding-left: 6%;
   }
-  
+
   .carousel-arrow {
     width: 45px;
     height: 45px;
   }
-  
+
   .carousel-arrow-left {
     left: 20px;
   }
-  
+
   .carousel-arrow-right {
     right: 20px;
   }
 }
 
+/* Tablet */
 @media (max-width: 768px) {
   .hero-carousel {
-    height: 80vh;
+    height: 85vh;
   }
-  
+
   .hero-slide {
     justify-content: center;
     text-align: center;
-    padding: 0 5%;
+    padding: 0 6%;
+    align-items: center;
   }
-  
+
   .hero-content {
     max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  .hero-title {
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    margin-bottom: 16px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+    margin-bottom: 24px;
+  }
+
   .hero-button {
-    padding: 12px 24px;
-    font-size: 1rem;
+    padding: 12px 28px;
+    font-size: 0.95rem;
   }
-  
+
   .carousel-arrow {
     width: 40px;
     height: 40px;
+    font-size: 1rem;
   }
-  
+
   .carousel-arrow-left {
-    left: 15px;
+    left: 12px;
   }
-  
+
   .carousel-arrow-right {
-    right: 15px;
+    right: 12px;
   }
-  
+
   .carousel-dots {
     bottom: 20px;
+    gap: 10px;
   }
-  
+
   .carousel-dot {
     width: 10px;
     height: 10px;
   }
 }
 
+/* Mobile phones */
 @media (max-width: 480px) {
+  .hero-carousel {
+    height: 75vh;
+  }
+
+  .hero-slide {
+    padding: 0 5%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: clamp(1.3rem, 6vw, 1.8rem);
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.85rem, 3.5vw, 1rem);
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .hero-button {
+    padding: 10px 22px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+
+  /* Move arrows lower so they don't overlap text */
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+    top: auto;
+    bottom: 55px;
+    transform: none;
+  }
+
+  .carousel-arrow:hover {
+    transform: scale(1.05);
+  }
+
+  .carousel-arrow-left {
+    left: 15px;
+  }
+
+  .carousel-arrow-right {
+    right: 15px;
+  }
+
+  .carousel-dots {
+    bottom: 16px;
+    gap: 8px;
+  }
+
+  .carousel-dot {
+    width: 9px;
+    height: 9px;
+    border-width: 1.5px;
+  }
+
+  .carousel-progress {
+    height: 3px;
+  }
+}
+
+/* Very small phones (iPhone SE, Galaxy Fold, etc.) */
+@media (max-width: 360px) {
   .hero-carousel {
     height: 70vh;
   }
-  
-  .hero-slide {
-    padding: 0 4%;
+
+  .hero-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
   }
-  
+
+  .hero-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 16px;
+  }
+
   .hero-button {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 9px 18px;
+    font-size: 0.8rem;
   }
-  
+
   .carousel-arrow {
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+    bottom: 48px;
   }
-  
+
   .carousel-arrow-left {
     left: 10px;
   }
-  
+
   .carousel-arrow-right {
     right: 10px;
+  }
+}
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-carousel {
+    height: 100vh;
+  }
+
+  .hero-slide {
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 5%;
+    align-items: center;
+  }
+
+  .hero-content {
+    max-width: 60%;
+    align-items: flex-start;
+  }
+
+  .hero-title {
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    margin-bottom: 8px;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.75rem, 2vw, 0.95rem);
+    margin-bottom: 12px;
+  }
+
+  .hero-button {
+    padding: 8px 18px;
+    font-size: 0.8rem;
+  }
+
+  .carousel-arrow {
+    width: 32px;
+    height: 32px;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+  }
+
+  .carousel-dots {
+    bottom: 10px;
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
   }
 }
 
@@ -315,17 +476,17 @@
   .hero-slide {
     transition: opacity 0.3s ease;
   }
-  
+
   .hero-title,
   .hero-subtitle,
   .hero-button {
     animation: none;
   }
-  
+
   .hero-button:hover {
     transform: none;
   }
-  
+
   .carousel-arrow:hover {
     transform: translateY(-50%);
   }
@@ -336,12 +497,12 @@
   .hero-overlay {
     background: rgba(0, 0, 0, 0.8);
   }
-  
+
   .carousel-arrow {
     background: rgba(255, 255, 255, 0.9);
     border: 2px solid white;
   }
-  
+
   .carousel-dot {
     border-width: 3px;
   }
