@@ -1,26 +1,23 @@
 import React from "react";
-
 import '../Components/Download.css';
+
 const PebCtaBanner = () => {
   return (
     <div className="wrapper">
       <div className="container">
         <h2 className="text">
-          To know information about <strong>Opus</strong> Engineering <strong></strong>
+          To know information about <strong>Opus</strong> Engineering
         </h2>
-
-        <button className="button">
-              <a
+        <a
           href="/opus.pdf"
           download="Opus-Brochure.pdf"
           className="button"
         >
-          Download Brochure</a>
-        </button>
+          Download Brochure
+        </a>
       </div>
     </div>
   );
 };
-
 
 export default PebCtaBanner;

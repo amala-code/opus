@@ -140,7 +140,8 @@ const ContactSection = () => {
             <MdEngineering className="badge-icon" />
             <span>Get In Touch</span>
           </div>
-          <h2>Transform Your Vision Into Reality</h2>
+          <h2>Transform Your Vision <span className="contact-title-highlight">Into Reality</span></h2>
+          <div className="contact-title-underline"></div>
         </div>
 
         <div className="contact-content">
