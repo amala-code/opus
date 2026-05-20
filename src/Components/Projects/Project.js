@@ -11,7 +11,7 @@ const projectsData = [
     label: "CHIMNEY FABRICATION",
     heading: "Amruta Herbals - Industrial Chimney System",
     description: "Complete fabrication and erection of a 30-meter industrial chimney for Amruta Herbals. This project involved precision engineering, structural calculations, and safety compliance for pharmaceutical manufacturing operations with optimal emission control and environmental standards.",
-    background: "/Images/wh1.png",
+    background: "/Images/wh1.jpeg",
     location: "Madhya Pradesh, India",
     completionDate: "February 2024",
     projectType: "Chimney Engineering",

@@ -5,7 +5,7 @@ export const coachingData = [
     id: 1,
     tittle: "PEB Warehouses",
     data: "Pre-Engineered Building warehouse construction — our core specialty. Fast, cost-effective, and scalable industrial storage solutions.",
-    background: "/Images/s1.jpg"
+    background: "/Images/shed.jpg"
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const coachingData = [
     id: 3,
     tittle: "Steel Bridges",
     data: "Steel bridge structures for industrial and infrastructure applications with precision engineering.",
-    background: "/Images/silo.jpg"
+    background: "/Images/s1.jpg"
   },
   {
     id: 4,

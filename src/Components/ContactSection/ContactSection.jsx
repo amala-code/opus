@@ -156,12 +156,26 @@ const ContactSection = () => {
                   <div className="icon-wrapper phone">
                     <FaPhoneAlt className="icon" />
                   </div>
-                  <div className="contact-text">
-                    <span className="label">Direct Line</span>
-                    <a href="tel:+919826430661" className="value">
-                      +91-9826430661
-                    </a>
-                  </div>
+           <div className="contact-text">
+  <span className="label">Direct Line</span>
+
+  <div className="phone-list">
+    <a href="tel:+919826430661" className="phone-chip">
+      +91 98264 30661
+    </a>
+
+    <a href="tel:+919340031105" className="phone-chip">
+      +91 93400 31105
+    </a>
+
+    <a href="tel:+919827286629" className="phone-chip">
+      +91 98272 86629
+    </a>
+     <a href="tel:+919827286629" className="phone-chip">
+      +91 97704 68190
+    </a>
+  </div>
+</div>
                 </div>
 
                 <div className="contact-item">

@@ -117,7 +117,7 @@ const Navbar = () => {
           <div className="navbar-modern-contact">
             <div className="navbar-modern-phone">
               <FaPhone className="navbar-modern-phone-icon" />
-              <span>+91-9826430661</span>
+              <span>+91 97704681901</span>
             </div>
  
           </div>
