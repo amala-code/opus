@@ -15,7 +15,7 @@ const projectsData = [
     subtitle: "Industrial Chimney System",
     description:
       "30-meter industrial chimney with precision engineering, structural calculations, and safety compliance for pharmaceutical manufacturing.",
-    background: "/Images/wh1.png",
+    background: "/Images/21.jpg",
     location: "Madhya Pradesh",
     duration: "8 Weeks",
     status: "Completed",

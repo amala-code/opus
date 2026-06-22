@@ -81,6 +81,15 @@
   color: #2172eb;
 }
 
+.footer-links p a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-links p a:hover {
+  color: #2172eb;
+}
+
 .mt {
   margin-top: 26px;
 }
@@ -128,6 +137,11 @@
 /* Footer Logo Enhancements */
 .footer-logo-social {
   flex: 1;
+}
+
+.footer-logo-social a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .logo-container {

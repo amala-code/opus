@@ -59,7 +59,7 @@ export const coachingData = [
     id: 10,
     tittle: "Industrial Chimneys",
     data: "Industrial chimney fabrication and installation ranging from 2 tons to 15 tons capacity.",
-    background: "/Images/s10.png"
+    background: "/Images/21.jpg"
   },
   {
     id: 11,

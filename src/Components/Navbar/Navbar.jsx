@@ -102,7 +102,7 @@ const Navbar = () => {
       <nav className="navbar-modern">
         <div className="navbar-modern-container">
           {/* Logo Section */}
-          <div className="navbar-modern-logo">
+          <NavLink to="/" className="navbar-modern-logo" style={{ textDecoration: "none" }}>
             <div className="navbar-modern-logo-icon">
               {/* <div className="navbar-modern-logo-symbol"></div> */}
               <img src={logo} alt="Opus Engineering Logo" />
@@ -111,7 +111,7 @@ const Navbar = () => {
               <span className="navbar-modern-logo-name">Opus Engineering</span>
               <span className="navbar-modern-logo-tagline">Engineering Excellence</span>
             </div>
-          </div>
+          </NavLink>
 
           {/* Contact Info & Download Brochure Button */}
           <div className="navbar-modern-contact">
